@@ -1,0 +1,54 @@
+en:
+  activerecord:
+    models:
+      account: &account "Account"
+      category: &category "Category"
+      record: &record "Record"
+      template: &template "Template"
+      transfer: &transfer "Transfer"
+
+    attributes:
+      account:
+        title: "Title"
+        color: "Color"
+        initial_amount_cents: "Initial amount"
+        archived: "Archived"
+      category:
+        title: "Title"
+        color: "Color"
+
+      record:
+        account: *account
+        account_id: *account
+        category: *category
+        category_id: *category
+        transfer: *transfer
+        transfer_id: *transfer
+        group: "Group"
+        amount_cents: "Amount"
+        occurred_on: "Occurred on"
+        note: "Note"
+
+      template:
+        title: "Title"
+        account: *account
+        account_id: *account
+        category: *category
+        category_id: *category
+        group: "Group"
+        amount_cents: "Amount"
+        note: "Note"
+
+      transfer:
+        from_account: &from_account "From account"
+        from_account_id: *from_account
+        to_account: &to_account "To account"
+        to_account_id: *to_account
+        amount_cents: "Amount"
+        occurred_on: "Occurred on"
+        note: "Note"
+
+    errors:
+      models:
+        transfer:
+          must_be_different_from_origin_account: "must be different from the origin account"

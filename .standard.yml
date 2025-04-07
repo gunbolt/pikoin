@@ -1,0 +1,16 @@
+ruby_version: 3.4
+format: progress
+parallel: true
+
+plugins:
+  - standard-rails
+
+ignore:
+  - "node_modules/**/*"
+  - "vendor/**/*"
+  - "tmp/**/*"
+  - "storage/**/*"
+  - "public/**/*"
+  - "coverage/**/*"
+  - "app/{views,components}/**/*.rb":
+      - "Rails/Output"

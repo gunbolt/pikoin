@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: "SN Pro";
+    src: url("sn_pro/SNPro-VariableRegular.woff2") format("woff2-variations");
+    font-weight: 200 900;
+    font-style: regular;
+}
+
+@font-face {
+    font-family: "SN Pro";
+    src: url("sn_pro/SNPro-VariableItalic.woff2") format("woff2-variations");
+    font-weight: 200 900;
+    font-style: italic;
+}
+
+@theme {
+    --font-sans: "SN Pro", "sans-serif";
+
+    --animate-fade-in-up: fade-in-up 4s ease-in-out forwards;
+
+    @keyframes fade-in-up {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        10%,
+        90% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        100% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+    }
+}
+
+@plugin "daisyui";
+
+@plugin "daisyui/theme" {
+    name: "pikoin";
+    default: true;
+    prefersdark: true;
+    color-scheme: "light";
+    --color-base-100: oklch(100% 0 0);
+    --color-base-200: oklch(98% 0 0);
+    --color-base-300: oklch(95% 0 0);
+    --color-base-content: oklch(21% 0.006 285.885);
+    --color-primary: oklch(0.59 0.152 310.42);
+    --color-primary-content: oklch(98% 0 0);
+    --color-secondary: oklch(0.85 0.0834 348.4);
+    --color-secondary-content: oklch(21% 0.006 285.885);
+    --color-accent: oklch(0.87 0.0765 152.77);
+    --color-accent-content: oklch(21% 0.006 285.885);
+    --color-neutral: oklch(0.38 0.1153 275.18);
+    --color-neutral-content: oklch(98% 0 0);
+    --color-info: oklch(0.83 0.0429 245.04);
+    --color-info-content: oklch(21% 0.006 285.885);
+    --color-success: oklch(0.74 0.125 167.39);
+    --color-success-content: oklch(21% 0.006 285.885);
+    --color-warning: oklch(0.82 0.1467 84.35);
+    --color-warning-content: oklch(21% 0.006 285.885);
+    --color-error: oklch(0.69 0.1728 359.95);
+    --color-error-content: oklch(21% 0.006 285.885);
+    --radius-selector: 2rem;
+    --radius-field: 2rem;
+    --radius-box: 1rem;
+    --size-selector: 0.3125rem;
+    --size-field: 0.3125rem;
+    --border: 2px;
+    --depth: 0;
+    --noise: 0;
+}

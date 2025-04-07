@@ -1,0 +1,75 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  misc:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          cache: yarn
+          node-version-file: .tool-versions
+
+      - name: Install Yarn packages
+        run: yarn install --check-files --pure-lockfile
+
+      - name: Lint Javascript
+        run: yarn lint
+
+      - name: Audit Javascript
+        run: yarn audit
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: .tool-versions
+          bundler-cache: true
+
+      - name: Scan Ruby
+        run: bin/brakeman --no-pager
+
+      - name: Lint Ruby
+        run: bundle exec standardrb
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: .tool-versions
+          bundler-cache: true
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          cache: yarn
+          node-version-file: .tool-versions
+
+      - name: Install Yarn packages
+        run: yarn install --check-files --pure-lockfile
+
+      - name: Run tests
+        env:
+          RAILS_ENV: test
+        run: RUBYOPT='--enable=frozen-string-literal --debug=frozen-string-literal' bin/rails db:test:prepare test:all
+
+      - name: Keep screenshots from failed system tests
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: screenshots
+          path: ${{ github.workspace }}/tmp/screenshots
+          if-no-files-found: ignore

@@ -1,0 +1,10 @@
+en:
+  date:
+    formats:
+      full_date: "%a, %B %d, %Y"
+
+  back: "Back"
+  cancel: "Cancel"
+  expense: "Expense"
+  income: "Income"
+  transfer: "Transfer"

@@ -1,0 +1,33 @@
+en:
+  components:
+    accounts:
+      empty_state:
+        title: "You don't have any accounts yet!"
+        description: "After creating an account, you will be able to start recording transactions."
+        new_account: "New account"
+
+    categories:
+      empty_state:
+        title: "No categories yet!"
+        description: "Keep your records organized by creating custom categories that fit your needs."
+        new_category: "New category"
+
+    records:
+      empty_state:
+        title: "This account doesn't have records yet"
+        description: "Keep track of your accout activity by adding transactions."
+        new_record: "New record"
+
+    templates:
+      empty_state:
+        title: "You haven’t saved any templates"
+        description: "Use templates to simplify the process of adding similar records"
+        new_template: "New template"
+
+    layouts:
+      menu_items:
+        accounts: "Accounts"
+        records: "Records"
+        categories: "Categories"
+        templates: "Templates"
+        sign_out: "Sign out"
