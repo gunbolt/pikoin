@@ -2,6 +2,8 @@
 
 A free and open source finance tracker.
 
+ <img alt="pikoin" src="https://raw.githubusercontent.com/gunbolt/pikoin/HEAD/.github/screenshot.png" style="max-width: 100%;">
+
 In construction...
 
 ## Contributing
