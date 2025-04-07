@@ -21,8 +21,7 @@ module Components
                 span do
                   Bolt.CurrencyDisplay(
                     amount: @account.balance(on: occurred_on),
-                    size: :sm,
-                    class: "opacity-80"
+                    size: :sm
                   )
                 end
               end
