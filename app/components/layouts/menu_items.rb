@@ -28,7 +28,7 @@ module Components
         end
       end
 
-      def accounts_active? = AccountsController === controller
+      def accounts_active? = request.path.start_with?("/accounts")
 
       def categories_active? = CategoriesController === controller
 
