@@ -40,6 +40,12 @@ en:
         remove: "Remove"
         remove_confirm: "Are you sure you want to remove this category? This will also permanently remove all associated records."
 
+    insights:
+      index:
+        page_title: "Insights"
+        page_subtitle: "Your finances overview"
+        change_period: "Change period"
+
     record_types:
       index:
         page_title: "Choose a record type"

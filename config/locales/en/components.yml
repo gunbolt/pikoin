@@ -26,6 +26,7 @@ en:
 
     layouts:
       menu_items:
+        insights: "Insights"
         accounts: "Accounts"
         records: "Records"
         categories: "Categories"

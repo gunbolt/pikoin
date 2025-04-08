@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "accounts#index"
+  root "insights#index"
 
   resources :accounts, except: %i[show] do
     scope module: :accounts do
@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     end
   end
   resources :categories, except: %i[show]
+  resources :insights, only: %i[index]
   resources :ordering, only: %i[update], param: :resource
   resources :record_types, only: %i[index]
   resources :templates, except: %i[show]

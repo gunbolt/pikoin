@@ -6,6 +6,12 @@ module Components
       register_value_helper :controller
 
       def view_template
+        Bolt.MenuItem href: insights_path, active: insights_active? do
+          Lucide.Gauge(class: "size-5")
+
+          span { t(".insights") }
+        end
+
         Bolt.MenuItem href: accounts_path, active: accounts_active? do
           Lucide.WalletMinimal(class: "size-5")
 
@@ -27,6 +33,8 @@ module Components
           span { t(".sign_out") }
         end
       end
+
+      def insights_active? = InsightsController === controller
 
       def accounts_active? = request.path.start_with?("/accounts")
 
