@@ -4,10 +4,10 @@ class OrderingController < ApplicationController
   def update
     ordering = ordering_params
 
-    case Reorder.call(model_class:, ordering:)
-    in Reorder::Success
+    case Sortables::Reorder.call(model_class:, ordering:)
+    in Sortables::Reorder::Success
       head :ok
-    in Reorder::Failure
+    in Sortables::Reorder::Failure
       head :unprocessable_entity
     end
   end
