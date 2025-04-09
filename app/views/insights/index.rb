@@ -1,6 +1,10 @@
 module Views
   module Insights
     class Index < Views::Base
+      def initialize(cashflow:)
+        @cashflow = cashflow
+      end
+
       private
 
       def view_template
@@ -21,7 +25,7 @@ module Views
             end
 
             Bolt.PageBody do
-              "#TODO"
+              Components::Insights.CashflowCard(cashflow: @cashflow)
             end
           end
         end
