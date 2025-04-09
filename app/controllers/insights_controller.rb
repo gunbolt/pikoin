@@ -1,5 +1,7 @@
 class InsightsController < ApplicationController
   def index
-    render Views::Insights::Index.new
+    result = Insights::CalculateCashflow.call
+
+    render Views::Insights::Index.new(cashflow: result.cashflow)
   end
 end

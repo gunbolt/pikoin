@@ -12,6 +12,10 @@ en:
         description: "Keep your records organized by creating custom categories that fit your needs."
         new_category: "New category"
 
+    insights:
+      cashflow_card:
+        title: "Cashflow"
+
     records:
       empty_state:
         title: "This account doesn't have records yet"
