@@ -1,13 +1,13 @@
 module Insights
   class CalculateCashflow < ApplicationOperation
-    Success = Data.define(:cashflow)
+    Result = Data.define(:cashflow)
 
     def initialize(period: nil)
       @period = period
     end
 
     def call
-      Success[
+      Result[
         cashflow: Cashflow[
           income: total_amount(:income),
           expense: total_amount(:expense)
