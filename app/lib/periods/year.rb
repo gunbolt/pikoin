@@ -4,13 +4,12 @@ module Periods
       @value = value
     end
 
+    def range
+      @range ||= Date.new(value.to_i).all_year
+    end
+
     def steps
-      @steps ||= Date.new(value.to_i)
-        .all_year
-        .step(1.month)
-        .map do
-          it..it.end_of_month
-        end
+      @steps ||= range.step(1.month).map { it..it.end_of_month }
     end
   end
 end

@@ -10,5 +10,7 @@ class Period
     end
   end
 
+  def range = raise NoMethodError, "You must implement #{self.class.name}#range"
+
   def steps = raise NoMethodError, "You must implement #{self.class.name}#steps"
 end
