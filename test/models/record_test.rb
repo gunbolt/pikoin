@@ -29,7 +29,18 @@ class RecordTest < ActiveSupport::TestCase
     assert validate_presence_of(:category).matches?(record)
   end
 
-  test "without_transfers scope" do
+  test ".on scope" do
+    record_a = create(:record, :income, occurred_on: 1.day.ago)
+    record_b = create(:record, :expense, occurred_on: 2.days.ago)
+    record_c = create(:record, :income, occurred_on: 1.month.ago)
+
+    assert_equal [record_a], Record.on(1.day.ago).to_a
+    assert_equal [record_b], Record.on(2.days.ago).to_a
+    assert_equal [record_a, record_b, record_c],
+      Record.on(2.months.ago..Time.zone.today).to_a
+  end
+
+  test ".without_transfers scope" do
     record_a = create(:record, :income)
     record_b = create(:record, :expense)
     transfer = create(:transfer)
@@ -46,9 +57,9 @@ class RecordTest < ActiveSupport::TestCase
     create(:record, :income, amount_cents: 200_00)
     create(:record, :expense, amount_cents: 150_00)
 
-    assert_equal Money.new(50_00), Record.total_amount
-    assert_equal Money.new(200_00), Record.income.total_amount
-    assert_equal Money.new(-150_00), Record.expense.total_amount
+    assert_equal Money.new(50_00), Record.total
+    assert_equal Money.new(200_00), Record.income.total
+    assert_equal Money.new(-150_00), Record.expense.total
   end
 
   test "#amount" do

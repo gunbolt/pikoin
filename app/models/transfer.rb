@@ -3,11 +3,11 @@ class Transfer < ApplicationRecord
   belongs_to :to_account, class_name: "Account"
 
   has_one :expense_record,
-    -> { where(group: :expense) },
+    -> { expense },
     class_name: "Record",
     dependent: :destroy
   has_one :income_record,
-    -> { where(group: :income) },
+    -> { income },
     class_name: "Record",
     dependent: :destroy
 
