@@ -9,18 +9,10 @@ module Insights
     def call
       Result[
         cashflow: Cashflow[
-          income: total_amount(:income),
-          expense: total_amount(:expense)
+          income: Record.income.on(@period).without_transfers.total,
+          expense: Record.expense.on(@period).without_transfers.total
         ]
       ]
-    end
-
-    private
-
-    def total_amount(group)
-      records = Record.without_transfers.where(group: group)
-      records = records.where(occurred_on: @period) if @period
-      records.total_amount
     end
   end
 end

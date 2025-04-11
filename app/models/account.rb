@@ -22,7 +22,7 @@ class Account < ApplicationRecord
   validates :color, format: {with: Constants::COLOR_REGEX, allow_blank: true}
 
   def balance(on: Time.zone.today)
-    records.where(occurred_on: ..on).total_amount + initial_amount
+    records.on(..on).total + initial_amount
   end
 
   private

@@ -5,6 +5,7 @@ class Record < ApplicationRecord
   belongs_to :category, optional: true
   belongs_to :transfer, optional: true
 
+  scope :on, ->(period) { period ? where(occurred_on: period) : all }
   scope :without_transfers, -> { where(transfer_id: nil) }
 
   validates :category, presence: true, unless: :transfer_id?
@@ -16,7 +17,7 @@ class Record < ApplicationRecord
 
   validates :note, length: {maximum: 32}
 
-  def self.total_amount = Money.new(sum('amount_cents * "group"'))
+  def self.total = Money.new(sum('amount_cents * "group"'))
 
   def amount
     Money.new(amount_cents * self.class.groups[group])
