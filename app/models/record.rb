@@ -5,7 +5,7 @@ class Record < ApplicationRecord
   belongs_to :category, optional: true
   belongs_to :transfer, optional: true
 
-  scope :without_transfer, -> { where(transfer_id: nil) }
+  scope :without_transfers, -> { where(transfer_id: nil) }
 
   validates :category, presence: true, unless: :transfer_id?
   validates :category, absence: true, if: :transfer_id?

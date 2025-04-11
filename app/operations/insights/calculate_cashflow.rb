@@ -18,7 +18,7 @@ module Insights
     private
 
     def total_amount(group)
-      records = Record.without_transfer.where(group: group)
+      records = Record.without_transfers.where(group: group)
       records = records.where(occurred_on: @period) if @period
       records.total_amount
     end
