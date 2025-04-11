@@ -29,12 +29,12 @@ class RecordTest < ActiveSupport::TestCase
     assert validate_presence_of(:category).matches?(record)
   end
 
-  test "without_transfer scope" do
+  test "without_transfers scope" do
     record_a = create(:record, :income)
     record_b = create(:record, :expense)
     transfer = create(:transfer)
 
-    result = Record.without_transfer.to_a
+    result = Record.without_transfers.to_a
 
     assert_includes result, record_a
     assert_includes result, record_b
