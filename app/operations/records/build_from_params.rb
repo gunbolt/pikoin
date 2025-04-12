@@ -41,7 +41,7 @@ module Records
         account_id: template.account_id,
         category_id: template.category_id,
         amount_cents: template.amount_cents,
-        note: template.note
+        note: template.note.presence || template.title
       )
     end
   end
