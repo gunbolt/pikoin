@@ -55,6 +55,17 @@ module Records
       assert_equal Time.zone.today, result.record.occurred_on
     end
 
+    test "building from template with empty note" do
+      account = create(:account)
+      template = create(:template, title: "My title", note: "")
+
+      result = Records::BuildFromParams.call(
+        account: account, params: {template: template.id.to_s}
+      )
+
+      assert_equal template.title, result.record.note
+    end
+
     test "building from missing template" do
       account = create(:account)
       assert_raises ActiveRecord::RecordNotFound do
