@@ -30,9 +30,9 @@ class RecordTest < ActiveSupport::TestCase
   end
 
   test ".on scope" do
-    record_a = create(:record, :income, occurred_on: 1.day.ago)
-    record_b = create(:record, :expense, occurred_on: 2.days.ago)
-    record_c = create(:record, :income, occurred_on: 1.month.ago)
+    record_a = create(:income, occurred_on: 1.day.ago)
+    record_b = create(:expense, occurred_on: 2.days.ago)
+    record_c = create(:income, occurred_on: 1.month.ago)
 
     assert_equal [record_a], Record.on(1.day.ago).to_a
     assert_equal [record_b], Record.on(2.days.ago).to_a
@@ -41,8 +41,8 @@ class RecordTest < ActiveSupport::TestCase
   end
 
   test ".without_transfers scope" do
-    record_a = create(:record, :income)
-    record_b = create(:record, :expense)
+    record_a = create(:income)
+    record_b = create(:expense)
     transfer = create(:transfer)
 
     result = Record.without_transfers.to_a
@@ -54,8 +54,8 @@ class RecordTest < ActiveSupport::TestCase
   end
 
   test ".total_amount" do
-    create(:record, :income, amount_cents: 200_00)
-    create(:record, :expense, amount_cents: 150_00)
+    create(:income, amount_cents: 200_00)
+    create(:expense, amount_cents: 150_00)
 
     assert_equal Money.new(50_00), Record.total
     assert_equal Money.new(200_00), Record.income.total
