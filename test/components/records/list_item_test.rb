@@ -27,12 +27,12 @@ module Components::Records
     end
 
     test "amount" do
-      record = create(:record, :expense)
+      record = create(:expense)
       render Components::Records::ListItem.new(record:)
 
       assert_css "span.text-error", text: record.amount.format
 
-      record = create(:record, :income)
+      record = create(:income)
 
       render Components::Records::ListItem.new(record:)
 

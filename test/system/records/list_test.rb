@@ -4,8 +4,8 @@ module Records
   class ListSystemTest < ApplicationSystemTestCase
     test "with records" do
       account = create(:account)
-      record_one = create(:record, :expense, account:, amount_cents: 20_00)
-      record_two = create(:record, :income, account:, amount_cents: 12_54)
+      record_one = create(:expense, account:, amount_cents: 20_00)
+      record_two = create(:income, account:, amount_cents: 12_54)
 
       visit_account_records_page(account)
 

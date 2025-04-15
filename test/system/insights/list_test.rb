@@ -3,10 +3,10 @@ require "application_system_test_case"
 module Insights
   class ListSystemTest < ApplicationSystemTestCase
     test "display cashflow insight" do
-      create(:record, :income, amount_cents: 10_00, occurred_on: Time.zone.today)
-      create(:record, :expense, amount_cents: 1_00, occurred_on: Time.zone.today)
-      create(:record, :expense, amount_cents: 2_00, occurred_on: 10.days.ago)
-      create(:record, :expense, amount_cents: 4_00, occurred_on: 1.year.ago)
+      create(:income, amount_cents: 10_00, occurred_on: Time.zone.today)
+      create(:expense, amount_cents: 1_00, occurred_on: Time.zone.today)
+      create(:expense, amount_cents: 2_00, occurred_on: 10.days.ago)
+      create(:expense, amount_cents: 4_00, occurred_on: 1.year.ago)
 
       visit root_path(as: create(:user))
 
