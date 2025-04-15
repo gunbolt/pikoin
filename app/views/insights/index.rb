@@ -17,15 +17,33 @@ module Views
               end
 
               Bolt.PageActions do
-                Bolt.LinkButton href: "#", color: :primary do
-                  Lucide.SlidersHorizontal class: "size-4"
-                  plain t(".change_period")
-                end
+                period_select
               end
             end
 
             Bolt.PageBody do
               Components::Insights.CashflowCard(cashflow: @cashflow)
+            end
+          end
+        end
+      end
+
+      def period_select
+        form(
+          action: insights_path,
+          method: :get,
+          class: "w-full",
+          data: {controller: "auto-submit"}
+        ) do
+          select(
+            class: "select select-primary select-sm w-full md:w-fit",
+            name: "period",
+            data: {action: "auto-submit#submit"}
+          ) do
+            Constants::PERIODS.each do |period|
+              option(value: period, selected: request.params[:period] == period) do
+                t(period, scope: "period")
+              end
             end
           end
         end

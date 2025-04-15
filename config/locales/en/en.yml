@@ -8,3 +8,13 @@ en:
   expense: "Expense"
   income: "Income"
   transfer: "Transfer"
+
+  period:
+    tm: "This month"
+    ty: "This year"
+    7d: "Last 7 days"
+    1m: "Last 30 days"
+    3m: "Last 3 months"
+    6m: "Last 6 months"
+    1y: "Last 12 months"
+    all: "All"

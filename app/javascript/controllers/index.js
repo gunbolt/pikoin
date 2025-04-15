@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import AutoSubmitController from "./auto_submit_controller"
+application.register("auto-submit", AutoSubmitController)
+
 import MoneyFieldController from "./money_field_controller"
 application.register("money-field", MoneyFieldController)
 
