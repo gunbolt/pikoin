@@ -40,7 +40,7 @@ module Views
             name: "period",
             data: {action: "auto-submit#submit"}
           ) do
-            Constants::PERIODS.each do |period|
+            Period::ALL.each_key do |period|
               option(value: period, selected: request.params[:period] == period) do
                 t(period, scope: "period")
               end
