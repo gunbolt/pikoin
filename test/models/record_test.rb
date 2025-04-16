@@ -19,6 +19,11 @@ class RecordTest < ActiveSupport::TestCase
       .matches?(record)
 
     assert validate_length_of(:note).is_at_most(32).matches?(record)
+
+    travel_to Date.new(2020, 1, 15) do
+      assert validate_comparison_of(:occurred_on)
+        .is_less_than_or_equal_to(Date.new(2020, 1, 15))
+    end
   end
 
   test "category validation" do

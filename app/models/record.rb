@@ -17,6 +17,9 @@ class Record < ApplicationRecord
 
   validates :note, length: {maximum: 32}
 
+  validates :occurred_on,
+    comparison: {less_than_or_equal_to: -> { Time.zone.today }}
+
   def self.total = Money.new(sum('amount_cents * "group"'))
 
   def amount
