@@ -17,4 +17,5 @@ en:
     3m: "Last 3 months"
     6m: "Last 6 months"
     1y: "Last 12 months"
+    2y: "Last 24 months"
     all: "All"
