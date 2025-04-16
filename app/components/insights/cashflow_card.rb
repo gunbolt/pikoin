@@ -18,7 +18,7 @@ module Components
         Bolt.Panel do
           div class: "flex flex-col gap-4" do
             div class: "flex flex-col" do
-              span class: "text-sm text-current/60" do
+              span class: "text-lg font-bold" do
                 t(".title")
               end
 
