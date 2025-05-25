@@ -3,7 +3,7 @@ module Bolt
     private
 
     def view_template(&)
-      div class: "drawer-side", data: {turbo_temporary: true} do
+      div class: "drawer-side z-100", data: {turbo_temporary: true} do
         label(
           for: "drawer-toggle",
           class: "drawer-overlay",
