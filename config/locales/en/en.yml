@@ -12,6 +12,8 @@ en:
   period:
     tm: "This month"
     ty: "This year"
+    lm: "Last month"
+    ly: "Last year"
     7d: "Last 7 days"
     1m: "Last 30 days"
     3m: "Last 3 months"
