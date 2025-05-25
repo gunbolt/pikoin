@@ -6,8 +6,14 @@ class PeriodTest < ActiveSupport::TestCase
       period = Period.for("tm")
       assert_equal Date.new(2025, 4, 1)..Date.new(2025, 4, 30), period.range
 
+      period = Period.for("lm")
+      assert_equal Date.new(2025, 3, 1)..Date.new(2025, 3, 31), period.range
+
       period = Period.for("ty")
       assert_equal Date.new(2025, 1, 1)..Date.new(2025, 12, 31), period.range
+
+      period = Period.for("ly")
+      assert_equal Date.new(2024, 1, 1)..Date.new(2024, 12, 31), period.range
 
       period = Period.for("7d")
       assert_equal Date.new(2025, 4, 8)..Date.new(2025, 4, 15), period.range
