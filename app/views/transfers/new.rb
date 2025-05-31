@@ -13,8 +13,13 @@ module Views
           Bolt.Page do
             Bolt.PageHeader sticky: false do
               Bolt.PageHeading do
-                Bolt.PageTitle(drawer_toggle: false) { t(".page_title") }
-                Bolt.PageSubtitle { t(".page_subtitle") }
+                Bolt.PageTitle(drawer_toggle: false) do
+                  t("New transfer")
+                end
+
+                Bolt.PageSubtitle do
+                  t("Move money between accounts")
+                end
               end
             end
 

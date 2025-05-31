@@ -5,8 +5,8 @@ module Accounts
     test "valid form" do
       visit_new_account_page
 
-      assert_css "h1", text: t("views.accounts.new.page_title")
-      assert_link t("cancel"), href: accounts_path
+      assert_css "h1", text: t("New account")
+      assert_link t("Cancel"), href: accounts_path
 
       fill_in field(Account, :title), with: "My special account"
       choose("account[color]", option: "#bb3c63", allow_label_click: true)
@@ -14,7 +14,7 @@ module Accounts
       click_button submit_text(Account)
 
       assert_current_path accounts_path
-      assert_css ".alert-success", text: t("accounts.create.success")
+      assert_css ".alert-success", text: t("Account created")
       assert_css "li", text: "My special account"
       assert_css "li", text: Money.new(20_00).format(sign_positive: true)
     end
@@ -37,9 +37,9 @@ module Accounts
     def visit_new_account_page
       visit root_path(as: create(:user))
 
-      click_link t("components.layouts.menu_items.accounts")
+      click_link t("Accounts")
 
-      click_link t("views.accounts.index.new_account")
+      click_link t("New account")
     end
   end
 end

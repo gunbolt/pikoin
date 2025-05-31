@@ -19,7 +19,7 @@ module Components
           div class: "flex flex-col gap-4" do
             div class: "flex flex-col" do
               span class: "text-lg font-bold" do
-                t(".title")
+                t("Cashflow")
               end
 
               span class: "text-lg font-bold" do
@@ -27,8 +27,8 @@ module Components
               end
             end
 
-            progress_bar(title: t("income"), amount: @income, group: :income)
-            progress_bar(title: t("expense"), amount: @expense, group: :expense)
+            progress_bar(title: t("Income"), amount: @income, group: :income)
+            progress_bar(title: t("Expense"), amount: @expense, group: :expense)
           end
         end
       end

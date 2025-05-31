@@ -1,7 +1,8 @@
 module Bolt
   class Submit < Base
-    def initialize(form, **)
+    def initialize(form, value = nil, **)
       @form = form
+      @value = value
 
       super(**)
     end
@@ -9,7 +10,7 @@ module Bolt
     private
 
     def view_template(&)
-      @form.submit class: "btn btn-primary"
+      @form.submit @value, **@attributes, class: "btn btn-primary"
     end
   end
 end

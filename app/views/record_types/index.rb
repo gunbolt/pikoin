@@ -12,8 +12,13 @@ module Views
           Bolt.Page do
             Bolt.PageHeader sticky: false do
               Bolt.PageHeading do
-                Bolt.PageTitle(drawer_toggle: false) { t(".page_title") }
-                Bolt.PageSubtitle { t(".page_subtitle") }
+                Bolt.PageTitle(drawer_toggle: false) do
+                  t("Choose a record type")
+                end
+
+                Bolt.PageSubtitle do
+                  t("Choose the type of record you want to create.")
+                end
               end
             end
 
@@ -26,7 +31,7 @@ module Views
                   ghost: true
                 ) do
                   Lucide.ArrowLeft(class: "size-4")
-                  plain t("cancel")
+                  plain t("Cancel")
                 end
               end
             end
@@ -43,7 +48,7 @@ module Views
             )
           ) do
             Lucide.Minus(class: "size-5 stroke-3")
-            span { t("expense") }
+            span { t("Expense") }
           end
 
           grid_item(
@@ -53,7 +58,7 @@ module Views
             )
           ) do
             Lucide.Plus(class: "size-5 stroke-3")
-            span { t("income") }
+            span { t("Income") }
           end
 
           grid_item(
@@ -62,7 +67,7 @@ module Views
             )
           ) do
             Lucide.ArrowLeftRight(class: "size-5 stroke-3")
-            span { t("transfer") }
+            span { t("Transfer") }
           end
 
           @templates.each do |template|

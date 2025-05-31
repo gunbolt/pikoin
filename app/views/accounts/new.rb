@@ -12,8 +12,13 @@ module Views
           Bolt.Page do
             Bolt.PageHeader sticky: false do
               Bolt.PageHeading do
-                Bolt.PageTitle(drawer_toggle: false) { t(".page_title") }
-                Bolt.PageSubtitle { t(".page_subtitle") }
+                Bolt.PageTitle(drawer_toggle: false) do
+                  t("New account")
+                end
+
+                Bolt.PageSubtitle do
+                  t("Set up a new account")
+                end
               end
             end
 

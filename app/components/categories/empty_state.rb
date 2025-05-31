@@ -7,12 +7,17 @@ module Components
         Bolt.Result do
           Bolt.ResultImage src: image_path("categories-empty-state.svg")
 
-          Bolt.ResultTitle { t(".title") }
-          Bolt.ResultDescription { t(".description") }
+          Bolt.ResultTitle do
+            t("No categories yet!")
+          end
+
+          Bolt.ResultDescription do
+            t("Keep your records organized by creating custom categories that fit your needs")
+          end
 
           Bolt.ResultActions do
             Bolt.LinkButton href: new_category_path, color: :primary do
-              t(".new_category")
+              t("New category")
             end
           end
         end

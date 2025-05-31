@@ -7,14 +7,14 @@ module Templates
 
       visit_edit_template_page(template:)
 
-      assert_css "h1", text: t("views.templates.edit.page_title")
+      assert_css "h1", text: t("Edit template")
 
       fill_in field(Template, :title), with: "New template title"
 
       click_button submit_text(Template, :update)
 
       assert_current_path templates_path
-      assert_css ".alert-success", text: t("templates.update.success")
+      assert_css ".alert-success", text: t("Template updated")
       assert_css "li", text: "New template title"
     end
 
@@ -37,7 +37,7 @@ module Templates
     def visit_edit_template_page(template:)
       visit root_path(as: create(:user))
 
-      click_link t("components.layouts.menu_items.templates")
+      click_link t("Templates")
 
       click_link template.title, href: edit_template_path(template)
     end

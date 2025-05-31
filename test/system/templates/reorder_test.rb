@@ -31,7 +31,7 @@ module Templates
     def visit_templates_page
       visit root_path(as: create(:user))
 
-      click_link t("components.layouts.menu_items.templates")
+      click_link t("Templates")
     end
   end
 end

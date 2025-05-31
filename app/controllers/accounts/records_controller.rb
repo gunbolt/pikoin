@@ -36,7 +36,7 @@ module Accounts
       case Records::Create.call(attributes: record_params)
       in Records::Create::Success
         redirect_to account_records_path(account),
-          notice: t(".success")
+          notice: t("Record created")
       in Records::Create::Failure(record)
         render Views::Accounts::Records::New.new(
           record:, accounts:, categories:
@@ -49,7 +49,7 @@ module Accounts
 
       case Records::Update.call(id: params[:id], attributes: record_params)
       in Records::Update::Success
-        redirect_to account_records_path(account), notice: t(".success")
+        redirect_to account_records_path(account), notice: t("Record updated")
       in Records::Update::Failure(record)
         render Views::Accounts::Records::Edit.new(
           account:, record:, accounts:, categories:
@@ -62,7 +62,7 @@ module Accounts
 
       case Records::Destroy.call(id: params[:id])
       in Records::Destroy::Success
-        redirect_to account_records_path(account), notice: t(".success")
+        redirect_to account_records_path(account), notice: t("Record removed")
       end
     end
 

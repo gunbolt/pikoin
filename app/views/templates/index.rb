@@ -12,15 +12,15 @@ module Views
           Bolt.Page do
             Bolt.PageHeader do
               Bolt.PageHeading do
-                Bolt.PageTitle { t(".page_title") }
-                Bolt.PageSubtitle { t(".page_subtitle") }
+                Bolt.PageTitle { t("Templates") }
+                Bolt.PageSubtitle { t("Templates help pre-fill common records info") }
               end
 
               if @templates.any?
                 Bolt.PageActions do
                   Bolt.LinkButton href: new_template_path, color: :primary do
                     Lucide.Plus class: "size-4"
-                    plain t(".new_template")
+                    plain t("New template")
                   end
                 end
               end

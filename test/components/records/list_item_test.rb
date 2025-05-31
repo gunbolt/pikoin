@@ -17,13 +17,13 @@ module Components::Records
       render Components::Records::ListItem.new(record:)
 
       assert_content record.category.title
-      refute_content t("transfer")
+      refute_content t("Transfer")
 
       record = create(:transfer).expense_record
 
       render Components::Records::ListItem.new(record:)
 
-      assert_content t("transfer")
+      assert_content t("Transfer")
     end
 
     test "amount" do

@@ -20,7 +20,7 @@ module Records
       assert_css "li", text: record_two.account.title
       assert_css "li", text: record_two.amount.format(sign_positive: true)
 
-      assert_link t("views.accounts.records.index.new_record"),
+      assert_link t("New record"),
         href: record_types_path(account_id: account.id)
     end
 
@@ -31,9 +31,8 @@ module Records
 
       assert_css "h1", text: account.title
       assert_content account.balance.format(sign_positive: true)
-      assert_css "div", text: t("components.records.empty_state.title")
-      assert_css "p", text: t("components.records.empty_state.description")
-      assert_link t("components.records.empty_state.new_record"),
+      assert_css "div", text: t("This account doesn't have records yet")
+      assert_link t("New record"),
         href: record_types_path(account_id: account.id)
     end
 
@@ -62,16 +61,16 @@ module Records
       assert_text I18n.l(yesterday, format: :full_date)
       refute_text I18n.l(last_week, format: :full_date)
       assert_css "li", text: category_a.title, count: 20
-      assert_button I18n.t("bolt.pagination.previous"), disabled: true
+      assert_button I18n.t("Previous"), disabled: true
 
-      click_link I18n.t("bolt.pagination.next")
+      click_link I18n.t("Next")
 
       refute_text I18n.l(yesterday, format: :full_date)
       assert_text I18n.l(last_week, format: :full_date)
       assert_css "li", text: category_b.title, count: 16
-      assert_button I18n.t("bolt.pagination.next"), disabled: true
+      assert_button I18n.t("Next"), disabled: true
 
-      click_link I18n.t("bolt.pagination.previous")
+      click_link I18n.t("Previous")
 
       assert_css "li", text: category_a.title, count: 20
     end
@@ -81,7 +80,7 @@ module Records
     def visit_account_records_page(account)
       visit root_path(as: create(:user))
 
-      click_link t("components.layouts.menu_items.accounts")
+      click_link t("Accounts")
 
       click_link account.title, href: account_records_path(account)
     end

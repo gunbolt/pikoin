@@ -9,12 +9,12 @@ module Categories
 
       assert_field field(Category, :title), with: category.title
 
-      accept_confirm t("views.categories.edit.remove_confirm") do
-        click_link I18n.t("views.categories.edit.remove")
+      accept_confirm t("Are you sure you want to remove this category? This will also permanently remove all associated records") do
+        click_link t("Remove")
       end
 
       assert_current_path categories_path
-      assert_css ".alert-success", text: t("categories.destroy.success")
+      assert_css ".alert-success", text: t("Category removed")
       refute_text category.title
     end
 
@@ -23,7 +23,7 @@ module Categories
     def visit_edit_category_page(category:)
       visit root_path(as: create(:user))
 
-      click_link t("components.layouts.menu_items.categories")
+      click_link t("Categories")
 
       click_link category.title, href: edit_category_path(category)
     end

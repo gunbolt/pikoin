@@ -10,7 +10,7 @@ module Components::Insights
 
       render Components::Insights::CashflowCard.new(cashflow:)
 
-      assert_text t("components.insights.cashflow_card.title")
+      assert_text t("Cashflow")
       assert_css ".text-error", text: Money.new(-5_00).format
     end
 
@@ -22,7 +22,7 @@ module Components::Insights
 
       render Components::Insights::CashflowCard.new(cashflow:)
 
-      assert_text t("income")
+      assert_text t("Income")
       assert_css ".text-success",
         text: Money.new(10_00).format(sign_positive: true)
       assert_css ".progress-success[max='1500'][value='1000']"
@@ -36,7 +36,7 @@ module Components::Insights
 
       render Components::Insights::CashflowCard.new(cashflow:)
 
-      assert_text t("expense")
+      assert_text t("Expense")
       assert_css ".text-error",
         text: Money.new(-15_00).format
       assert_css ".progress-error[max='1900'][value='1500']"

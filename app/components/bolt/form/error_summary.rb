@@ -17,7 +17,9 @@ module Bolt
       div class: WRAPPER_CLASSES, data: {turbo_temporary: true} do
         div class: "flex flex-row items-center gap-2" do
           Lucide.CircleX
-          span(class: "font-bold") { t(".title") }
+          span(class: "font-bold") do
+            t("Something’s not quite right")
+          end
         end
 
         ul class: "list-inside list-disc pl-8 text-sm" do

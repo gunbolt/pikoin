@@ -10,10 +10,10 @@ module Templates
 
       visit_templates_page
 
-      assert_css "h1", text: t("views.templates.new.page_title")
+      assert_css "h1", text: t("New template")
 
       fill_in field(Template, :title), with: "Wage"
-      choose t("income")
+      choose t("Income")
       select account.title, from: field(Template, :account_id)
       select category.title, from: field(Template, :category_id)
       fill_in field(Template, :amount_cents), with: "2000_00"
@@ -22,7 +22,7 @@ module Templates
       click_button submit_text(Template)
 
       assert_current_path templates_path
-      assert_css ".alert-success", text: t("templates.create.success")
+      assert_css ".alert-success", text: t("Template created")
       assert_css "li", text: "Wage"
       assert_css "li", text: "Lumon"
       assert_css "li", text: account.title
@@ -47,9 +47,9 @@ module Templates
     def visit_templates_page
       visit root_path(as: create(:user))
 
-      click_link t("components.layouts.menu_items.templates")
+      click_link t("Templates")
 
-      click_link t("views.templates.index.new_template")
+      click_link t("New template")
     end
   end
 end

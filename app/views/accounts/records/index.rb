@@ -39,7 +39,7 @@ module Views
                     dash: true
                   ) do
                     Lucide.Pencil class: "size-4"
-                    plain t(".edit")
+                    plain t("Edit")
                   end
 
                   if @records.any?
@@ -48,7 +48,7 @@ module Views
                       color: :primary
                     ) do
                       Lucide.Plus class: "size-4"
-                      plain t(".new_record")
+                      plain t("New record")
                     end
                   end
                 end

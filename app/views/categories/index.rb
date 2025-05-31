@@ -12,15 +12,20 @@ module Views
           Bolt.Page do
             Bolt.PageHeader do
               Bolt.PageHeading do
-                Bolt.PageTitle { t(".page_title") }
-                Bolt.PageSubtitle { t(".page_subtitle") }
+                Bolt.PageTitle do
+                  t("Categories")
+                end
+
+                Bolt.PageSubtitle do
+                  t("Keep your records organized with categories")
+                end
               end
 
               if @categories.any?
                 Bolt.PageActions do
                   Bolt.LinkButton href: new_category_path, color: :primary do
                     Lucide.Plus class: "size-4"
-                    plain t(".new_category")
+                    plain t("New category")
                   end
                 end
               end
