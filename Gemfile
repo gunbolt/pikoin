@@ -24,6 +24,8 @@ gem "propshaft"
 gem "puma"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails"
+# Rails related I18n stuff [https://github.com/svenfuchs/rails-i18n]
+gem "rails-i18n"
 # Use the database-backed adapters for Rails.cache, Active Job, and Action Cable
 gem "solid_cache"
 gem "solid_queue"

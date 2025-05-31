@@ -1,0 +1,54 @@
+pt-BR:
+  activerecord:
+    models:
+      account: &account "Conta"
+      category: &category "Categoria"
+      record: &record "Transação"
+      template: &template "Modelo"
+      transfer: &transfer "Transferência"
+
+    attributes:
+      account:
+        title: "Nome"
+        color: "Cor"
+        initial_amount_cents: "Saldo inicial"
+        archived: "Arquivada"
+      category:
+        title: "Nome"
+        color: "Cor"
+
+      record:
+        account: *account
+        account_id: *account
+        category: *category
+        category_id: *category
+        transfer: *transfer
+        transfer_id: *transfer
+        group: "Tipo"
+        amount_cents: "Valor"
+        occurred_on: "Ocorrido em"
+        note: "Anotação"
+
+      template:
+        title: "Nome"
+        account: *account
+        account_id: *account
+        category: *category
+        category_id: *category
+        group: "Tipo"
+        amount_cents: "Valor"
+        note: "Anotação"
+
+      transfer:
+        from_account: &from_account "Conta origem"
+        from_account_id: *from_account
+        to_account: &to_account "Conta destino"
+        to_account_id: *to_account
+        amount_cents: "Valor"
+        occurred_on: "Ocorrido em"
+        note: "Anotação"
+
+    errors:
+      models:
+        transfer:
+          must_be_different_from_origin_account: "deve ser diferente da conta de origem"

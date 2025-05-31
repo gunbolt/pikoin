@@ -28,12 +28,12 @@ module Components
                   div class: "flex flex-row gap-4" do
                     Bolt.FieldWrapper orientation: :horizontal do
                       Bolt.RadioButton form, :group, :expense
-                      Bolt.Label form, :group, value: :expense
+                      Bolt.Label form, :group, t("Expense"), value: :expense
                     end
 
                     Bolt.FieldWrapper orientation: :horizontal do
                       Bolt.RadioButton form, :group, :income
-                      Bolt.Label form, :group, value: :income
+                      Bolt.Label form, :group, t("Income"), value: :income
                     end
                   end
 
