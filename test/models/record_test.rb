@@ -77,7 +77,7 @@ class RecordTest < ActiveSupport::TestCase
       amount_cents: 1234
     )
 
-    assert_equal Money.new(-1234), expense.amount
-    assert_equal Money.new(1234), income.amount
+    assert_equal Money.new(-12_34), expense.amount
+    assert_equal Money.new(12_34), income.amount
   end
 end

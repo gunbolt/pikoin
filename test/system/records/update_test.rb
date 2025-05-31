@@ -17,7 +17,7 @@ module Records
 
       assert_current_path account_records_path(record.account)
       assert_css ".alert-success", text: t("Record updated")
-      assert_css "li", text: Money.new(9582, "BRL").format
+      assert_css "li", text: Money.new(95_82).format
       assert_text I18n.l(Date.parse("2020-01-01"), format: :full_date)
     end
 

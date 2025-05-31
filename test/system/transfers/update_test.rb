@@ -17,7 +17,7 @@ module Transfers
 
       assert_current_path account_records_path(transfer.to_account)
       assert_css ".alert-success", text: t("Transfer updated")
-      assert_css "li", text: Money.new(9582, "BRL").format(sign_positive: true)
+      assert_css "li", text: Money.new(95_82).format(sign_positive: true)
       assert_text I18n.l(Date.parse("2020-01-01"), format: :full_date)
     end
 
