@@ -23,5 +23,8 @@ module Pikoin
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.language = ENV.fetch("PIKOIN_LANG", "pt-BR")
+    config.default_currency = ENV.fetch("PIKOIN_CURRENCY", "BRL")
   end
 end

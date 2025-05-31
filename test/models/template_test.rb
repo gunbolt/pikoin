@@ -51,8 +51,8 @@ class TemplateTest < ActiveSupport::TestCase
     )
     no_amount = Template.new(group: :expense, amount_cents: 0)
 
-    assert_equal Money.new(-1234), expense.amount
-    assert_equal Money.new(1234), income.amount
+    assert_equal Money.new(-12_34), expense.amount
+    assert_equal Money.new(12_34), income.amount
     assert no_amount.amount.zero?
   end
 end

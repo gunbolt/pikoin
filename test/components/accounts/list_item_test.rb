@@ -12,8 +12,8 @@ module Components::Accounts
 
     test "amount" do
       account = Account.new(id: 1)
-      positive_balance = Money.new(10_00, "BRL")
-      negative_balance = Money.new(-10_00, "BRL")
+      positive_balance = Money.new(10_00)
+      negative_balance = Money.new(-10_00)
       account.stub :balance, positive_balance do
         render Components::Accounts::ListItem.new(account:)
 

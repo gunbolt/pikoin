@@ -27,7 +27,7 @@ module Templates
       assert_css "li", text: "Lumon"
       assert_css "li", text: account.title
       assert_css "li", text: category.title
-      assert_css "li", text: Money.new(200000).format(sign_positive: true)
+      assert_css "li", text: Money.new(2000_00).format(sign_positive: true)
     end
 
     test "invalid form" do
