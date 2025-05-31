@@ -3,12 +3,3 @@ en:
     failure_after_create: "Bad email or password."
     failure_when_not_signed_in: "Please sign in to continue."
     failure_when_missing_email: "Email can't be blank."
-
-  helpers:
-    label:
-      session:
-        email: Email address
-        password: Password
-    submit:
-      session:
-        submit: Sign in

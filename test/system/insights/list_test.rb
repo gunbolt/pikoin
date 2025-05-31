@@ -10,7 +10,7 @@ module Insights
 
       visit root_path(as: create(:user))
 
-      assert_text t("components.insights.cashflow_card.title")
+      assert_text t("Cashflow")
       assert_text Money.new(7_00).format(sign_positive: true)
       assert_text Money.new(10_00).format(sign_positive: true)
       assert_text Money.new(-3_00).format

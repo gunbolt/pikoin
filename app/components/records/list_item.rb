@@ -67,11 +67,11 @@ module Components
       end
 
       def main_text
-        @record.transfer_id? ? t("transfer") : @category.title
+        @record.transfer_id? ? t("Transfer") : @category.title
       end
 
       def transfer_dot
-        Bolt.Dot size: "size-8", color: "", title: t("transfer") do
+        Bolt.Dot size: "size-8", color: "", title: t("Transfer") do
           Lucide.ArrowLeftRight(class: "size-6")
         end
       end

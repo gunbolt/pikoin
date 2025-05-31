@@ -5,7 +5,7 @@ module Sessions
     test "sign out" do
       visit root_path(as: create(:user))
 
-      click_link t("components.layouts.menu_items.sign_out")
+      click_link t("Sign out")
 
       assert_current_path sign_in_path
     end

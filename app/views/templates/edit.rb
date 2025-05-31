@@ -14,8 +14,13 @@ module Views
           Bolt.Page do
             Bolt.PageHeader sticky: false do
               Bolt.PageHeading do
-                Bolt.PageTitle(drawer_toggle: false) { t(".page_title") }
-                Bolt.PageSubtitle { t(".page_subtitle") }
+                Bolt.PageTitle(drawer_toggle: false) do
+                  t("Edit template")
+                end
+
+                Bolt.PageSubtitle do
+                  t("Edit template data")
+                end
               end
 
               Bolt.PageActions do
@@ -25,11 +30,11 @@ module Views
                   color: :error,
                   data: {
                     turbo_method: :delete,
-                    turbo_confirm: t(".remove_confirm")
+                    turbo_confirm: t("Are you sure you want to remove this template?")
                   }
                 ) do
                   Lucide.Trash class: "size-4"
-                  plain t(".remove")
+                  plain t("Remove")
                 end
               end
             end

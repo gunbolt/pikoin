@@ -12,15 +12,20 @@ module Views
           Bolt.Page do
             Bolt.PageHeader do
               Bolt.PageHeading do
-                Bolt.PageTitle { t(".page_title") }
-                Bolt.PageSubtitle { t(".page_subtitle") }
+                Bolt.PageTitle do
+                  t("Accounts")
+                end
+
+                Bolt.PageSubtitle do
+                  t("View and manage your accounts")
+                end
               end
 
               if @accounts.any?
                 Bolt.PageActions do
                   Bolt.LinkButton href: new_account_path, color: :primary do
                     Lucide.Plus class: "size-4"
-                    plain t(".new_account")
+                    plain t("New account")
                   end
                 end
               end

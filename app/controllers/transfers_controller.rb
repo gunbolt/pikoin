@@ -20,7 +20,7 @@ class TransfersController < ApplicationController
     case Transfers::Create.call(attributes: transfer_params)
     in Transfers::Create::Success
       redirect_to account_records_path(params[:account_id]),
-        notice: t(".success")
+        notice: t("Transfer created")
     in Transfers::Create::Failure(transfer)
       render Views::Transfers::New.new(transfer:, accounts:),
         status: :unprocessable_entity
@@ -31,7 +31,7 @@ class TransfersController < ApplicationController
     case Transfers::Update.call(id: params[:id], attributes: transfer_params)
     in Transfers::Update::Success
       redirect_to account_records_path(params[:account_id]),
-        notice: t(".success")
+        notice: t("Transfer updated")
     in Transfers::Update::Failure(transfer)
       render Views::Transfers::Edit.new(transfer:, accounts:),
         status: :unprocessable_entity
@@ -41,7 +41,8 @@ class TransfersController < ApplicationController
   def destroy
     case Transfers::Destroy.call(id: params[:id])
     in Transfers::Destroy::Success
-      redirect_to account_records_path(params[:account_id]), notice: t(".success")
+      redirect_to account_records_path(params[:account_id]),
+        notice: t("Transfer removed")
     end
   end
 

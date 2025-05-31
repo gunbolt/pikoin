@@ -7,7 +7,7 @@ module Categories
 
       visit_edit_category_page(category:)
 
-      assert_css "h1", text: t("views.categories.edit.page_title")
+      assert_css "h1", text: t("Edit category")
 
       assert_field field(Category, :title), with: category.title
 
@@ -16,7 +16,7 @@ module Categories
       click_button submit_text(Category, :update)
 
       assert_current_path categories_path
-      assert_css ".alert-success", text: t("categories.update.success")
+      assert_css ".alert-success", text: t("Category updated")
       assert_css "li", text: "Updated title"
     end
 
@@ -39,7 +39,7 @@ module Categories
     def visit_edit_category_page(category:)
       visit root_path(as: create(:user))
 
-      click_link t("components.layouts.menu_items.categories")
+      click_link t("Categories")
 
       click_link category.title, href: edit_category_path(category)
     end

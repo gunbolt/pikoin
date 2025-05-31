@@ -8,8 +8,8 @@ module Views
           Bolt.Page do
             Bolt.PageHeader do
               Bolt.PageHeading do
-                Bolt.PageTitle { t(".page_title") }
-                Bolt.PageSubtitle { t(".page_subtitle") }
+                Bolt.PageTitle { "pikoin" }
+                Bolt.PageSubtitle { t("Log into your account") }
               end
             end
 
@@ -19,7 +19,7 @@ module Views
                   Bolt.Panel do
                     Bolt.Stack do
                       Bolt.FieldWrapper do
-                        Bolt.Label form, :email
+                        Bolt.Label form, :email, t("Email address")
                         Bolt.EmailField form,
                           :email,
                           autofocus: true,
@@ -28,7 +28,7 @@ module Views
                       end
 
                       Bolt.FieldWrapper do
-                        Bolt.Label form, :password
+                        Bolt.Label form, :password, t("Password")
                         Bolt.PasswordField form,
                           :password,
                           autocomplete: "current-password",
@@ -38,7 +38,7 @@ module Views
                   end
 
                   Bolt.Stack gap: :sm do
-                    Bolt.Submit form
+                    Bolt.Submit form, t("Sign in")
                   end
                 end
               end

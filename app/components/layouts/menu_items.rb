@@ -9,28 +9,28 @@ module Components
         Bolt.MenuItem href: insights_path, active: insights_active? do
           Lucide.Gauge(class: "size-5")
 
-          span { t(".insights") }
+          span { t("Insights") }
         end
 
         Bolt.MenuItem href: accounts_path, active: accounts_active? do
           Lucide.WalletMinimal(class: "size-5")
 
-          span { t(".accounts") }
+          span { t("Accounts") }
         end
 
         Bolt.MenuItem href: categories_path, active: categories_active? do
           Lucide.Tags(class: "size-5")
-          span { t(".categories") }
+          span { t("Categories") }
         end
 
         Bolt.MenuItem href: templates_path, active: templates_active? do
           Lucide.BookDashed(class: "size-5")
-          span { t(".templates") }
+          span { t("Templates") }
         end
 
         Bolt.MenuItem href: sign_out_path, data: {turbo_method: :delete} do
           Lucide.LogOut(class: "size-5")
-          span { t(".sign_out") }
+          span { t("Sign out") }
         end
       end
 

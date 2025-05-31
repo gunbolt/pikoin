@@ -20,7 +20,7 @@ class TemplatesController < ApplicationController
   def create
     case Templates::Create.call(attributes: template_params)
     in Templates::Create::Success
-      redirect_to templates_path, notice: t(".success")
+      redirect_to templates_path, notice: t("Template created")
     in Templates::Create::Failure(template)
       render Views::Templates::New.new(template:, accounts:, categories:),
         status: :unprocessable_entity
@@ -30,7 +30,7 @@ class TemplatesController < ApplicationController
   def update
     case Templates::Update.call(id: params[:id], attributes: template_params)
     in Templates::Update::Success
-      redirect_to templates_path, notice: t(".success")
+      redirect_to templates_path, notice: t("Template updated")
     in Templates::Update::Failure(template)
       render Views::Templates::Edit.new(template:, accounts:, categories:),
         status: :unprocessable_entity
@@ -40,7 +40,7 @@ class TemplatesController < ApplicationController
   def destroy
     case Templates::Destroy.call(id: params[:id])
     in Templates::Destroy::Success
-      redirect_to templates_path, notice: t(".success")
+      redirect_to templates_path, notice: t("Template removed")
     end
   end
 

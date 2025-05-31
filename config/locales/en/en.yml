@@ -3,11 +3,160 @@ en:
     formats:
       full_date: "%a, %B %d, %Y"
 
-  back: "Back"
-  cancel: "Cancel"
-  expense: "Expense"
-  income: "Income"
-  transfer: "Transfer"
+  "Account created": "Account created"
+
+  "Account removed": "Account removed"
+
+  "Account updated": "Account updated"
+
+  "Accounts": "Accounts"
+
+  "After creating an account, you will be able to start recording transactions": "After creating an account, you will be able to start recording transactions."
+
+  "Are you sure you want to remove this account? This will also permanently remove all associated records": "Are you sure you want to remove this account? This will also permanently remove all associated records."
+
+  "Are you sure you want to remove this category? This will also permanently remove all associated records": "Are you sure you want to remove this category? This will also permanently remove all associated records."
+
+  "Are you sure you want to remove this record?": >-
+    Are you sure you want to remove this record?
+
+  "Are you sure you want to remove this template?": >-
+    Are you sure you want to remove this template?
+
+  "Are you sure you want to remove this transfer?": >-
+    Are you sure you want to remove this transfer?
+
+  "Cancel": "Cancel"
+
+  "Cashflow": "Cashflow"
+
+  "Categories": "Categories"
+
+  "Category created": "Category created"
+
+  "Category removed": "Category removed"
+
+  "Category updated": "Category updated"
+
+  "Choose a record type": "Choose a record type"
+
+  "Choose the type of record you want to create": >-
+    Choose the type of record you want to create.
+
+  "Create a new record": "Create a new record"
+
+  "Create a new template": "Create a new template"
+
+  "Edit": "Edit"
+
+  "Edit account": "Edit account"
+
+  "Edit category": "Edit category"
+
+  "Edit record": "Edit record"
+
+  "Edit record data": "Edit record data"
+
+  "Edit template": "Edit template"
+
+  "Edit template data": "Edit template data"
+
+  "Edit transfer": "Edit transfer"
+
+  "Edit transfer data": "Edit transfer data"
+
+  "Edit your account information": "Edit your account information"
+
+  "Edit your category information": "Edit your category information"
+
+  "Email address": "Email address"
+
+  "Expense": "Expense"
+
+  "Income": "Income"
+
+  "Insights": "Insights"
+
+  "Keep track of your account activity by adding transactions": "Keep track of your account activity by adding transactions."
+
+  "Keep your records organized by creating custom categories that fit your needs": "Keep your records organized by creating custom categories that fit your needs."
+
+  "Keep your records organized with categories": >-
+    Keep your records organized with categories
+
+  "Log into your account": "Log into your account"
+
+  "Move money between accounts": "Move money between accounts"
+
+  "New account": "New account"
+
+  "New category": "New category"
+
+  "New record": "New record"
+
+  "New template": "New template"
+
+  "New transfer": "New transfer"
+
+  "Next": "Next"
+
+  "No categories yet!": "No categories yet!"
+
+  "Password": "Password"
+
+  "Previous": "Previous"
+
+  "Record created": "Record created"
+
+  "Record removed": "Record removed"
+
+  "Record updated": "Record updated"
+
+  "Records": "Records"
+
+  "Remove": "Remove"
+
+  "Set up a new account": "Set up a new account"
+
+  "Set up a new category": "Set up a new category"
+
+  "Sign in": "Sign in"
+
+  "Sign out": "Sign out"
+
+  "Something’s not quite right": "Something’s not quite right"
+
+  "Template created": "Template created"
+
+  "Template removed": "Template removed"
+
+  "Template updated": "Template updated"
+
+  "Templates": "Templates"
+
+  "Templates help pre-fill common records info": >-
+    Templates help pre-fill common records info
+
+  "This account doesn't have records yet": "This account doesn't have records yet"
+
+  "Transfer": "Transfer"
+
+  "Transfer created": "Transfer created"
+
+  "Transfer removed": "Transfer removed"
+
+  "Transfer updated": "Transfer updated"
+
+  "Use templates to simplify the process of adding similar records": >-
+    Use templates to simplify the process of adding similar records
+
+  "View and manage your accounts": "View and manage your accounts"
+
+  "You don't have any accounts yet!": "You don't have any accounts yet!"
+
+  "You haven’t saved any templates": "You haven’t saved any templates"
+
+  "Your finances overview": "Your finances overview"
 
   period:
     tm: "This month"

@@ -7,12 +7,12 @@ module Records
 
       visit_edit_record_page(record)
 
-      accept_confirm t("views.accounts.records.edit.remove_confirm") do
-        click_link I18n.t("views.accounts.records.edit.remove")
+      accept_confirm t("Are you sure you want to remove this record?") do
+        click_link t("Remove")
       end
 
       assert_current_path account_records_path(record.account)
-      assert_css ".alert-success", text: t("accounts.records.destroy.success")
+      assert_css ".alert-success", text: t("Record removed")
       refute_text record.amount.format
     end
 
@@ -23,7 +23,7 @@ module Records
 
       visit root_path(as: create(:user))
 
-      click_link t("components.layouts.menu_items.accounts")
+      click_link t("Accounts")
 
       click_link account.title, href: account_records_path(account)
 

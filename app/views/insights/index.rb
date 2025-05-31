@@ -12,8 +12,8 @@ module Views
           Bolt.Page do
             Bolt.PageHeader do
               Bolt.PageHeading do
-                Bolt.PageTitle { t(".page_title") }
-                Bolt.PageSubtitle { t(".page_subtitle") }
+                Bolt.PageTitle { t("Insights") }
+                Bolt.PageSubtitle { t("Your finances overview") }
               end
 
               Bolt.PageActions do

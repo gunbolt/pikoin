@@ -31,7 +31,7 @@ module Categories
     def visit_categories_page
       visit root_path(as: create(:user))
 
-      click_link t("components.layouts.menu_items.categories")
+      click_link t("Categories")
     end
   end
 end

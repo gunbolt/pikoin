@@ -20,7 +20,7 @@ class CategoriesController < ApplicationController
   def create
     case Categories::Create.call(attributes: category_params)
     in Categories::Create::Success
-      redirect_to categories_path, notice: t(".success")
+      redirect_to categories_path, notice: t("Category created")
     in Categories::Create::Failure(category)
       render Views::Categories::New.new(category:), status: :unprocessable_entity
     end
@@ -29,7 +29,7 @@ class CategoriesController < ApplicationController
   def update
     case Categories::Update.call(id: params[:id], attributes: category_params)
     in Categories::Update::Success
-      redirect_to categories_path, notice: t(".success")
+      redirect_to categories_path, notice: t("Category updated")
     in Categories::Update::Failure(category)
       render Views::Categories::Edit.new(category:), status: :unprocessable_entity
     end
@@ -38,7 +38,7 @@ class CategoriesController < ApplicationController
   def destroy
     case Categories::Destroy.call(id: params[:id])
     in Categories::Destroy::Success
-      redirect_to categories_path, notice: t(".success")
+      redirect_to categories_path, notice: t("Category removed")
     end
   end
 

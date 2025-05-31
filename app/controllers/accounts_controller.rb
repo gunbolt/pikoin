@@ -20,7 +20,7 @@ class AccountsController < ApplicationController
   def create
     case Accounts::Create.call(attributes: account_params)
     in Accounts::Create::Success
-      redirect_to accounts_path, notice: t(".success")
+      redirect_to accounts_path, notice: t("Account created")
     in Accounts::Create::Failure(account)
       render Views::Accounts::New.new(account:), status: :unprocessable_entity
     end
@@ -29,7 +29,7 @@ class AccountsController < ApplicationController
   def update
     case Accounts::Update.call(id: params[:id], attributes: account_params)
     in Accounts::Update::Success(account)
-      redirect_to account_records_path(account), notice: t(".success")
+      redirect_to account_records_path(account), notice: t("Account updated")
     in Accounts::Update::Failure(account)
       render Views::Accounts::Edit.new(account:), status: :unprocessable_entity
     end
@@ -38,7 +38,7 @@ class AccountsController < ApplicationController
   def destroy
     case Accounts::Destroy.call(id: params[:id])
     in Accounts::Destroy::Success
-      redirect_to accounts_path, notice: t(".success")
+      redirect_to accounts_path, notice: t("Account removed")
     end
   end
 

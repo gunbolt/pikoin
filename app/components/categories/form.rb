@@ -33,7 +33,7 @@ module Components
 
               Bolt.LinkButton href: categories_path, ghost: true do
                 Lucide.ArrowLeft(class: "size-5")
-                plain t("cancel")
+                plain t("Cancel")
               end
             end
           end

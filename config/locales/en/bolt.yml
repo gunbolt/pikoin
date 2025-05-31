@@ -1,8 +1,0 @@
-en:
-  bolt:
-    error_summary:
-      title: "Something’s not quite right"
-
-    pagination:
-      previous: "Previous"
-      next: "Next"

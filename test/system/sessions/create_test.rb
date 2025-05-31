@@ -7,24 +7,24 @@ module Sessions
 
       visit root_path
 
-      assert_css "h1", text: t("views.sessions.new.page_title")
+      assert_css "h1", text: "pikoin"
 
-      fill_in t("helpers.label.session.email"), with: "example@example.com"
-      fill_in t("helpers.label.session.password"), with: "test123"
+      fill_in t("Email address"), with: "example@example.com"
+      fill_in t("Password"), with: "test123"
 
-      click_button t("helpers.submit.session.submit")
+      click_button t("Sign in")
 
       assert_current_path root_path
-      assert_link t("components.layouts.menu_items.sign_out")
+      assert_link t("Sign out")
     end
 
     test "invalid credentials" do
       visit root_path
 
-      fill_in t("helpers.label.session.email"), with: "example@example.com"
-      fill_in t("helpers.label.session.password"), with: "test123"
+      fill_in t("Email address"), with: "example@example.com"
+      fill_in t("Password"), with: "test123"
 
-      click_button t("helpers.submit.session.submit")
+      click_button t("Sign in")
 
       assert_current_path sign_in_path
       assert_content t("flashes.failure_after_create")
@@ -35,17 +35,17 @@ module Sessions
 
       visit root_path
 
-      fill_in t("helpers.label.session.email"), with: "example@example.com"
-      fill_in t("helpers.label.session.password"), with: "WRONG"
+      fill_in t("Email address"), with: "example@example.com"
+      fill_in t("Password"), with: "WRONG"
 
       4.times do
-        click_button t("helpers.submit.session.submit")
+        click_button t("Sign in")
 
         assert_content t("flashes.failure_after_create")
       end
 
-      fill_in t("helpers.label.session.email"), with: "example@example.com"
-      fill_in t("helpers.label.session.password"), with: "test123"
+      fill_in t("Email address"), with: "example@example.com"
+      fill_in t("Password"), with: "test123"
 
       assert_current_path sign_in_path
     end

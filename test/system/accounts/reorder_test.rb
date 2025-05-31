@@ -31,7 +31,7 @@ module Accounts
     def visit_accounts_page
       visit root_path(as: create(:user))
 
-      click_link t("components.layouts.menu_items.accounts")
+      click_link t("Accounts")
     end
   end
 end

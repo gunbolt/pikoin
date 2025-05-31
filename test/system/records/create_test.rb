@@ -10,16 +10,16 @@ module Records
 
       visit_record_types_page(account)
 
-      assert_css "h1", text: t("views.record_types.index.page_title")
-      assert_link t("cancel"), href: account_records_path(account)
+      assert_css "h1", text: t("Choose a record type")
+      assert_link t("Cancel"), href: account_records_path(account)
 
-      click_link t("expense")
+      click_link t("Expense")
 
-      assert_css "h1", text: t("views.accounts.records.new.page_title")
-      assert_link t("cancel"), href: record_types_path(account_id: account.id)
+      assert_css "h1", text: t("New record")
+      assert_link t("Cancel"), href: record_types_path(account_id: account.id)
 
-      assert_checked_field t("expense")
-      refute_checked_field t("income")
+      assert_checked_field t("Expense")
+      refute_checked_field t("Income")
 
       assert_select field(Record, :account_id),
         selected: account.title,
@@ -34,7 +34,7 @@ module Records
       click_button submit_text(Record)
 
       assert_current_path account_records_path(account)
-      assert_css ".alert-success", text: t("accounts.records.create.success")
+      assert_css ".alert-success", text: t("Record created")
       assert_css "li", text: "Gunbolt - Rebound"
       assert_css "li", text: Money.new(-10_00).format
     end
@@ -45,16 +45,16 @@ module Records
 
       visit_record_types_page(account)
 
-      assert_css "h1", text: t("views.record_types.index.page_title")
-      assert_link t("cancel"), href: account_records_path(account)
+      assert_css "h1", text: t("Choose a record type")
+      assert_link t("Cancel"), href: account_records_path(account)
 
-      click_link t("income")
+      click_link t("Income")
 
-      assert_css "h1", text: t("views.accounts.records.new.page_title")
-      assert_link t("cancel"), href: record_types_path(account_id: account.id)
+      assert_css "h1", text: t("New record")
+      assert_link t("Cancel"), href: record_types_path(account_id: account.id)
 
-      assert_checked_field t("income")
-      refute_checked_field t("expense")
+      assert_checked_field t("Income")
+      refute_checked_field t("Expense")
 
       select account.title, from: field(Record, :account_id)
       select category.title, from: field(Record, :category_id)
@@ -65,7 +65,7 @@ module Records
       click_button submit_text(Record)
 
       assert_current_path account_records_path(account)
-      assert_css ".alert-success", text: t("accounts.records.create.success")
+      assert_css ".alert-success", text: t("Record created")
       assert_css "li", text: "Gunbolt - Rebound"
       assert_css "li", text: Money.new(14_52).format(sign_positive: true)
     end
@@ -78,15 +78,15 @@ module Records
 
       visit_record_types_page(account)
 
-      assert_css "h1", text: t("views.record_types.index.page_title")
-      assert_link t("cancel"), href: account_records_path(account)
+      assert_css "h1", text: t("Choose a record type")
+      assert_link t("Cancel"), href: account_records_path(account)
 
       click_link template.title
 
-      assert_css "h1", text: t("views.accounts.records.new.page_title")
-      assert_link t("cancel"), href: record_types_path(account_id: account.id)
+      assert_css "h1", text: t("New record")
+      assert_link t("Cancel"), href: record_types_path(account_id: account.id)
 
-      assert_checked_field t("income")
+      assert_checked_field t("Income")
       assert_select field(Record, :account_id),
         selected: template.account.title
       assert_select field(Record, :category_id),
@@ -101,7 +101,7 @@ module Records
       click_button submit_text(Record)
 
       assert_current_path account_records_path(account)
-      assert_css ".alert-success", text: t("accounts.records.create.success")
+      assert_css ".alert-success", text: t("Record created")
       assert_css "li", text: template.note
       assert_css "li", text: template.amount.format(sign_positive: true)
     end
@@ -110,7 +110,7 @@ module Records
       account = create(:account)
       visit_record_types_page(account)
 
-      click_link t("expense")
+      click_link t("Expense")
 
       fill_in field(Record, :occurred_on), with: ""
 
@@ -126,11 +126,11 @@ module Records
     def visit_record_types_page(account)
       visit root_path(as: create(:user))
 
-      click_link t("components.layouts.menu_items.accounts")
+      click_link t("Accounts")
 
       click_link account.title, href: account_records_path(account)
 
-      click_link t("components.records.empty_state.new_record"),
+      click_link t("New record"),
         href: record_types_path(account_id: account.id)
     end
   end
