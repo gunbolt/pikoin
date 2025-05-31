@@ -17,13 +17,13 @@ module Transfers
         href: record_types_path(account_id: from_account.id)
 
       select from_account.title,
-        from: field(Record, :from_account_id)
+        from: field(Transfer, :from_account_id)
       select to_account.title,
-        from: field(Record, :to_account_id)
+        from: field(Transfer, :to_account_id)
 
-      fill_in field(Record, :amount_cents), with: "8352"
-      fill_in field(Record, :occurred_on), with: "2025-01-01"
-      fill_in field(Record, :note), with: "Investing"
+      fill_in field(Transfer, :amount_cents), with: "8352"
+      fill_in field(Transfer, :occurred_on), with: "2025-01-01"
+      fill_in field(Transfer, :note), with: "Investing"
 
       click_button submit_text(Transfer)
 

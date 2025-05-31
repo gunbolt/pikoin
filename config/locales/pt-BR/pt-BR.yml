@@ -1,0 +1,170 @@
+pt-BR:
+  date:
+    formats:
+      full_date: "%a, %d de %B de %Y"
+
+  "Account created": "Conta criada"
+
+  "Account removed": "Conta excluída"
+
+  "Account updated": "Conta atualizada"
+
+  "Accounts": "Contas"
+
+  "After creating an account, you will be able to start recording transactions": "Após criar uma conta, você conseguirá registrar suas transações."
+
+  "Are you sure you want to remove this account? This will also permanently remove all associated records": "Tem certeza que deseja excluir essa conta? Isso irá excluir todas as transações associadas de forma permanente."
+
+  "Are you sure you want to remove this category? This will also permanently remove all associated records": "Tem certeza que deseja excluir essa categoria? Isso irá excluir todas as transações associadas de forma permanente."
+
+  "Are you sure you want to remove this record?": >-
+    Tem certeza que deseja excluir essa transação?
+
+  "Are you sure you want to remove this template?": >-
+    Tem certeza que deseja excluir esse modelo?
+
+  "Are you sure you want to remove this transfer?": >-
+    Tem certeza que deseja excluir essa transferência?
+
+  "Cancel": "Cancelar"
+
+  "Cashflow": "Fluxo de caixa"
+
+  "Categories": "Categorias"
+
+  "Category created": "Categoria criada"
+
+  "Category removed": "Categoria excluída"
+
+  "Category updated": "Categoria atualizada"
+
+  "Choose a record type": "Escolha o tipo da transação"
+
+  "Choose the type of record you want to create": >-
+    Escolha o tipo da transação que deseja criar
+
+  "Create a new record": "Crie uma nova transação"
+
+  "Create a new template": "Crie um novo modelo"
+
+  "Edit": "Atualizar"
+
+  "Edit account": "Atualizar conta"
+
+  "Edit category": "Atualizar categoria"
+
+  "Edit record": "Atualizar transação"
+
+  "Edit record data": "Atualize os dados da transação"
+
+  "Edit template": "Atualizar modelo"
+
+  "Edit template data": "Atualize os dados do modelo"
+
+  "Edit transfer": "Atualizar transferência"
+
+  "Edit transfer data": "Atualizar os dados da transferência"
+
+  "Edit your account information": "Atualize os dados da conta"
+
+  "Edit your category information": "Atualize os dados da categoria"
+
+  "Email address": "E-mail"
+
+  "Expense": "Despesa"
+
+  "Income": "Receita"
+
+  "Insights": "Indicadores"
+
+  "Keep track of your account activity by adding transactions": "Registre as atividades da sua conta criando transações."
+
+  "Keep your records organized by creating custom categories that fit your needs": "Mantenha suas transações organizadas criando categorias personalizadas que se encaixam nas suas necessidades."
+
+  "Keep your records organized with categories": >-
+    Mantenha suas transações organizadas utilizando categorias
+
+  "Log into your account": "Entre na sua conta"
+
+  "Move money between accounts": "Transfira dinheiro entre suas contas"
+
+  "New account": "Nova conta"
+
+  "New category": "Nova categoria"
+
+  "New record": "Nova transação"
+
+  "New template": "Novo modelo"
+
+  "New transfer": "Nova transferência"
+
+  "Next": "Próximo"
+
+  "No categories yet!": "Sem categorias ainda!"
+
+  "Password": "Senha"
+
+  "Previous": "Anterior"
+
+  "Record created": "Transação criada"
+
+  "Record removed": "Transação excluída"
+
+  "Record updated": "Transação atualizada"
+
+  "Remove": "Excluir"
+
+  "Set up a new account": "Crie uma nova conta"
+
+  "Set up a new category": "Crie uma nova categoria"
+
+  "Sign in": "Entrar"
+
+  "Sign out": "Sair"
+
+  "Something’s not quite right": "Algum problema aconteceu"
+
+  "Template created": "Modelo criado"
+
+  "Template removed": "Modelo excluído"
+
+  "Template updated": "Modelo atualizado"
+
+  "Templates": "Modelos"
+
+  "Templates help pre-fill common records info": >-
+    Modelos ajudam a criar transações com dados pré-definidos
+
+  "This account doesn't have records yet": "Essa conta ainda não tem transações"
+
+  "Transfer": "Transferência"
+
+  "Transfer created": "Transferência criada"
+
+  "Transfer removed": "Transferência excluída"
+
+  "Transfer updated": "Transferência atualizada"
+
+  "Use templates to simplify the process of adding similar records": >-
+    Utilize modelos para simplificar a criação de transações repetitivas
+
+  "View and manage your accounts": "Gerencie suas contas"
+
+  "You don't have any accounts yet!": "Você não tem nenhuma conta ainda"
+
+  "You haven’t saved any templates": "Você ainda não criou nenhum modelo"
+
+  "Your finances overview": "Uma visão geral das suas finanças"
+
+  period:
+    tm: "Esse mês"
+    ty: "Esse ano"
+    lm: "Último mês"
+    ly: "Último ano"
+    7d: "Últimos 7 dias"
+    1m: "Últimos 30 dias"
+    3m: "Últimos 3 meses"
+    6m: "Últimos 6 meses"
+    1y: "Últimos 12 meses"
+    2y: "Últimos 24 meses"
+    all: "Tudo"
