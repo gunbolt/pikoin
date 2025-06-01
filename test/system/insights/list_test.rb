@@ -3,6 +3,8 @@ require "application_system_test_case"
 module Insights
   class ListSystemTest < ApplicationSystemTestCase
     test "display cashflow insight" do
+      travel_to Date.new(2025, 5, 15)
+
       create(:income, amount_cents: 10_00, occurred_on: Time.zone.today)
       create(:expense, amount_cents: 1_00, occurred_on: Time.zone.today)
       create(:expense, amount_cents: 2_00, occurred_on: 10.days.ago)
@@ -26,6 +28,8 @@ module Insights
       assert_text Money.new(3_00).format(sign_positive: true)
       assert_text Money.new(10_00).format(sign_positive: true)
       assert_text Money.new(-7_00).format
+
+      travel_back
     end
   end
 end
