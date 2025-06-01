@@ -1,9 +1,8 @@
 class InsightsController < ApplicationController
   def index
     period = Period.for(params.fetch(:period, "tm"))
+    insights = Insights::BuildData.call(period: period.range).insights
 
-    result = Insights::CalculateCashflow.call(period: period.range)
-
-    render Views::Insights::Index.new(cashflow: result.cashflow)
+    render Views::Insights::Index.new(insights:)
   end
 end
