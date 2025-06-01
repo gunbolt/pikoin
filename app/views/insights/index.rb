@@ -1,8 +1,8 @@
 module Views
   module Insights
     class Index < Views::Base
-      def initialize(cashflow:)
-        @cashflow = cashflow
+      def initialize(insights:)
+        @insights = insights
       end
 
       private
@@ -22,7 +22,7 @@ module Views
             end
 
             Bolt.PageBody do
-              Components::Insights.CashflowCard(cashflow: @cashflow)
+              Components::Insights.CashflowCard(cashflow: @insights.cashflow)
             end
           end
         end
