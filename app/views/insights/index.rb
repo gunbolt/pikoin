@@ -22,7 +22,15 @@ module Views
             end
 
             Bolt.PageBody do
-              Components::Insights.CashflowCard(cashflow: @insights.cashflow)
+              div class: "flex flex-col gap-4" do
+                Components::Insights.CashflowCard(cashflow: @insights.cashflow)
+
+                div class: "grid grid-cols-1 md:grid-cols-2 gap-4" do
+                  Components::Insights.SpendingBreakdownCard(
+                    spending_breakdown: @insights.spending_breakdown
+                  )
+                end
+              end
             end
           end
         end

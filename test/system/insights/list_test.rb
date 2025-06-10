@@ -31,5 +31,11 @@ module Insights
 
       travel_back
     end
+
+    test "display spending breakdown insight" do
+      visit root_path(as: create(:user))
+
+      assert_text t("Spending breakdown")
+    end
   end
 end
