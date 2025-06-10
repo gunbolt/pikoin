@@ -3,8 +3,8 @@ require "test_helper"
 module Insights
   class CalculateSpendingBreakdownTest < ActiveSupport::TestCase
     test "total grouped by category" do
-      food = create(:category, title: "Food")
-      car = create(:category, title: "Car")
+      food = create(:category, title: "Food", color: "#000000")
+      car = create(:category, title: "Car", color: "#ffffff")
 
       create_list(:expense, 3, category: food, amount_cents: 3_00)
       create_list(:expense, 2, category: car, amount_cents: 50_00)
@@ -16,9 +16,11 @@ module Insights
       assert_equal 2, spending_breakdown.items.size
 
       assert_equal "Car", spending_breakdown.items.first.label
+      assert_equal "#ffffff", spending_breakdown.items.first.color
       assert_equal Money.new(100_00), spending_breakdown.items.first.total
 
       assert_equal "Food", spending_breakdown.items.second.label
+      assert_equal "#000000", spending_breakdown.items.second.color
       assert_equal Money.new(9_00), spending_breakdown.items.second.total
     end
 

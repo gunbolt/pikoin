@@ -7,6 +7,9 @@ import { application } from "./application"
 import AutoSubmitController from "./auto_submit_controller"
 application.register("auto-submit", AutoSubmitController)
 
+import Charts__SpendingBreakdownController from "./charts/spending_breakdown_controller"
+application.register("charts--spending-breakdown", Charts__SpendingBreakdownController)
+
 import MoneyFieldController from "./money_field_controller"
 application.register("money-field", MoneyFieldController)
 
