@@ -4,7 +4,10 @@ import SimpleMaskMoney from 'simple-mask-money'
 // Connects to data-controller="money-field"
 export default class extends Controller {
   static values = {
-    allowNegative: Boolean
+    allowNegative: Boolean,
+    decimalSeparator: String,
+    thousandsSeparator: String,
+    fractionDigits: Number
   }
 
   connect () {
@@ -15,6 +18,9 @@ export default class extends Controller {
   setupInput () {
     SimpleMaskMoney.setMask(this.element, {
       allowNegative: this.allowNegativeValue,
+      decimalSeparator: this.decimalSeparatorValue,
+      thousandsSeparator: this.thousandsSeparatorValue,
+      fractionDigits: this.fractionDigitsValue,
       fixed: true,
       cursor: 'end'
     })
@@ -24,7 +30,9 @@ export default class extends Controller {
     this.element.form.addEventListener('submit', () => {
       const maskedValue = this.element.value
       this.element.value = maskedValue.replace(/[^0-9-]/g, '') // keep numeric characters
-      setTimeout(() => { this.element.value = maskedValue }, 1) // set masked value again after submit
+      setTimeout(() => {
+        this.element.value = maskedValue
+      }, 1) // set masked value again after submit
     })
   }
 }
