@@ -2,7 +2,7 @@
   "name": "app",
   "private": true,
   "devDependencies": {
-    "esbuild": "^0.25.4"
+    "esbuild": "^0.25.5"
   },
   "scripts": {
     "lint": "npx standard app/javascript",
@@ -11,15 +11,15 @@
   },
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
-    "@hotwired/turbo-rails": "^8.0.13",
+    "@hotwired/turbo-rails": "^8.0.16",
     "@rails/request.js": "^0.0.12",
-    "@tailwindcss/cli": "^4.1.7",
+    "@tailwindcss/cli": "^4.1.10",
     "chart.js": "^4.4.9",
-    "daisyui": "^5.0.37",
-    "postcss": "^8.5.3",
+    "daisyui": "^5.0.43",
+    "postcss": "^8.5.5",
     "simple-mask-money": "^4.1.4",
     "sortablejs": "^1.15.6",
-    "tailwindcss": "^4.1.7"
+    "tailwindcss": "^4.1.10"
   },
   "standard": {
     "ignore": [
