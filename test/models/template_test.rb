@@ -41,14 +41,8 @@ class TemplateTest < ActiveSupport::TestCase
   end
 
   test "#amount" do
-    expense = Template.new(
-      group: :expense,
-      amount_cents: 1234
-    )
-    income = Template.new(
-      group: :income,
-      amount_cents: 1234
-    )
+    expense = Template.new(group: :expense, amount_cents: 1234)
+    income = Template.new(group: :income, amount_cents: 1234)
     no_amount = Template.new(group: :expense, amount_cents: 0)
 
     assert_equal Money.new(-12_34), expense.amount

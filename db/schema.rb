@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 100) do
+ActiveRecord::Schema[8.0].define(version: 2025_06_14_164313) do
   create_table "accounts", force: :cascade do |t|
     t.text "title", null: false
     t.text "color", null: false
@@ -46,6 +46,29 @@ ActiveRecord::Schema[8.0].define(version: 100) do
     t.index ["category_id"], name: "index_records_on_category_id"
     t.index ["occurred_on"], name: "index_records_on_occurred_on", order: :desc
     t.index ["transfer_id"], name: "index_records_on_transfer_id"
+  end
+
+  create_table "reminder_monthly_configs", force: :cascade do |t|
+    t.integer "day", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reminders", force: :cascade do |t|
+    t.text "title", null: false
+    t.integer "group", null: false
+    t.integer "account_id", null: false
+    t.integer "category_id", null: false
+    t.integer "amount_cents", default: 0, null: false
+    t.text "note", default: "", null: false
+    t.string "config_type", null: false
+    t.integer "config_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_reminders_on_account_id"
+    t.index ["category_id"], name: "index_reminders_on_category_id"
+    t.index ["config_type", "config_id"], name: "index_reminders_on_config"
+    t.index ["title"], name: "index_reminders_on_title", unique: true
   end
 
   create_table "templates", force: :cascade do |t|
@@ -91,6 +114,8 @@ ActiveRecord::Schema[8.0].define(version: 100) do
   add_foreign_key "records", "accounts"
   add_foreign_key "records", "categories"
   add_foreign_key "records", "transfers"
+  add_foreign_key "reminders", "accounts"
+  add_foreign_key "reminders", "categories"
   add_foreign_key "templates", "accounts"
   add_foreign_key "templates", "categories"
   add_foreign_key "transfers", "accounts", column: "from_account_id"
