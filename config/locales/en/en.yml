@@ -94,6 +94,8 @@ en:
 
   "New record": "New record"
 
+  "New reminder": "New reminder"
+
   "New template": "New template"
 
   "New transfer": "New transfer"
@@ -103,6 +105,8 @@ en:
   "No categories yet!": "No categories yet!"
 
   "No expenses for the chosen period": "No expenses for the chosen period"
+
+  "Nothing to remind you of — yet": "Nothing to remind you of — yet"
 
   "Password": "Password"
 
@@ -114,11 +118,18 @@ en:
 
   "Record updated": "Record updated"
 
+  "Reminders": "Reminders"
+
+  "Reminders for all your planned transactions": "Reminders for all your planned transactions"
+
   "Remove": "Remove"
 
   "Set up a new account": "Set up a new account"
 
   "Set up a new category": "Set up a new category"
+
+  "Set up reminders for any planned expense or income": >-
+    "Set up reminders for any planned expense or income"
 
   "Sign in": "Sign in"
 

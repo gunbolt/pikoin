@@ -18,6 +18,12 @@ module Components
           span { t("Accounts") }
         end
 
+        Bolt.MenuItem href: reminders_path, active: reminders_active? do
+          Lucide.Calendar(class: "size-5")
+
+          span { t("Reminders") }
+        end
+
         Bolt.MenuItem href: categories_path, active: categories_active? do
           Lucide.Tags(class: "size-5")
           span { t("Categories") }
@@ -37,6 +43,8 @@ module Components
       def insights_active? = InsightsController === controller
 
       def accounts_active? = request.path.start_with?("/accounts")
+
+      def reminders_active? = request.path.start_with?("/reminders")
 
       def categories_active? = CategoriesController === controller
 
