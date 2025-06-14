@@ -94,6 +94,8 @@ pt-BR:
 
   "New record": "Nova transação"
 
+  "New reminder": "Novo lembrete"
+
   "New template": "Novo modelo"
 
   "New transfer": "Nova transferência"
@@ -103,6 +105,8 @@ pt-BR:
   "No categories yet!": "Sem categorias ainda!"
 
   "No expenses for the chosen period": "Sem despesas para o período escolhido"
+
+  "Nothing to remind you of — yet": "Nada para te lembrar - ainda"
 
   "Password": "Senha"
 
@@ -114,11 +118,18 @@ pt-BR:
 
   "Record updated": "Transação atualizada"
 
+  "Reminders": "Lembretes"
+
+  "Reminders for all your planned transactions": "Lembretes para as suas transações planejadas"
+
   "Remove": "Excluir"
 
   "Set up a new account": "Crie uma nova conta"
 
   "Set up a new category": "Crie uma nova categoria"
+
+  "Set up reminders for any planned expense or income": >-
+    Configure lembretes para qualquer despesa ou receita planejada
 
   "Sign in": "Entrar"
 
