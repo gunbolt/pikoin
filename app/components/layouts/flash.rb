@@ -1,6 +1,8 @@
 module Components
   module Layouts
     class Flash < Base
+      include Phlex::Rails::Helpers::Flash
+
       COLORS = {
         "notice" => :success,
         "alert" => :error
