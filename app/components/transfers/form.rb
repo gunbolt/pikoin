@@ -39,7 +39,7 @@ module Components
                 div class: "flex flex-row gap-4" do
                   Bolt.FieldWrapper do
                     Bolt.Label form, :amount_cents
-                    Bolt.MoneyField form, :amount_cents
+                    Bolt.MoneyField form, :amount_cents, autofocus: true
                     Bolt.FieldError form, :amount_cents
                   end
 
