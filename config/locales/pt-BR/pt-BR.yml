@@ -53,6 +53,8 @@ pt-BR:
 
   "Choose a record type": "Escolha o tipo da transação"
 
+  "Choose the reminder type": "Escolha o tipo do lembrete"
+
   "Choose the type of record you want to create": >-
     Escolha o tipo da transação que deseja criar
 
@@ -60,6 +62,9 @@ pt-BR:
 
   "Create a new template": "Crie um novo modelo"
 
+  "Daily": "Diário"
+
+  "Define the frequency of your reminder": "Defina a frequência do seu lembrete"
   "Edit": "Atualizar"
 
   "Edit account": "Atualizar conta"
@@ -99,6 +104,8 @@ pt-BR:
 
   "Log into your account": "Entre na sua conta"
 
+  "Monthly": "Mensal"
+
   "Move money between accounts": "Transfira dinheiro entre suas contas"
 
   "New account": "Nova conta"
@@ -120,6 +127,8 @@ pt-BR:
   "No expenses for the chosen period": "Sem despesas para o período escolhido"
 
   "Nothing to remind you of — yet": "Nada para te lembrar - ainda"
+
+  "One time": "Única vez"
 
   "Password": "Senha"
 
@@ -177,6 +186,10 @@ pt-BR:
     Utilize modelos para simplificar a criação de transações repetitivas
 
   "View and manage your accounts": "Gerencie suas contas"
+
+  "Weekly": "Semanal"
+
+  "Yearly": "Anual"
 
   "You don't have any accounts yet!": "Você não tem nenhuma conta ainda"
 

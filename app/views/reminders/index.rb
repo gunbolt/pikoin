@@ -23,7 +23,7 @@ module Views
 
               if @reminders.any?
                 Bolt.PageActions do
-                  Bolt.LinkButton href: "#new-reminder", color: :primary do
+                  Bolt.LinkButton href: reminder_types_path, color: :primary do
                     Lucide.Plus class: "size-4"
                     plain t("New reminder")
                   end
