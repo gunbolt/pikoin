@@ -10,9 +10,11 @@ module Accounts
     def call
       account = Account.new(default_attributes.merge(@attributes))
 
-      return Success[account:] if account.save
-
-      Failure[account:]
+      if account.save
+        Success[account:] if account.save
+      else
+        Failure[account:]
+      end
     end
 
     private

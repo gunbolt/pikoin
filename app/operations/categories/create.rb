@@ -10,9 +10,11 @@ module Categories
     def call
       category = Category.new(default_attributes.merge(@attributes))
 
-      return Success[category:] if category.save
-
-      Failure[category:]
+      if category.save
+        Success[category:]
+      else
+        Failure[category:]
+      end
     end
 
     def default_attributes = {position: Category.next_position}

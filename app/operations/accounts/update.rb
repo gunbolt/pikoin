@@ -11,9 +11,11 @@ module Accounts
     def call
       account = Account.find(@id)
 
-      return Success[account:] if account.update(@attributes)
-
-      Failure[account:]
+      if account.update(@attributes)
+        Success[account:]
+      else
+        Failure[account:]
+      end
     end
   end
 end

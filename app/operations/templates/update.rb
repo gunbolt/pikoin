@@ -11,9 +11,11 @@ module Templates
     def call
       template = Template.find(@id)
 
-      return Success[template:] if template.update(@attributes)
-
-      Failure[template:]
+      if template.update(@attributes)
+        Success[template:]
+      else
+        Failure[template:]
+      end
     end
   end
 end

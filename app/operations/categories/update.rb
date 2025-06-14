@@ -11,9 +11,11 @@ module Categories
     def call
       category = Category.find(@id)
 
-      return Success[category:] if category.update(@attributes)
-
-      Failure[category:]
+      if category.update(@attributes)
+        Success[category:]
+      else
+        Failure[category:]
+      end
     end
   end
 end

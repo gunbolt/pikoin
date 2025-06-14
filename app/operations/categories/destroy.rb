@@ -10,9 +10,11 @@ module Categories
     def call
       category = Category.find(@id)
 
-      return Success[category:] if category.destroy
-
-      Failure[category:]
+      if category.destroy
+        Success[category:]
+      else
+        Failure[category:]
+      end
     end
   end
 end

@@ -10,9 +10,11 @@ module Templates
     def call
       template = Template.find(@id)
 
-      return Success[template:] if template.destroy
-
-      Failure[template:]
+      if template.destroy
+        Success[template:]
+      else
+        Failure[template:]
+      end
     end
   end
 end

@@ -10,9 +10,11 @@ module Transfers
     def call
       transfer = Transfer.find(@id)
 
-      return Success[transfer:] if transfer.destroy!
-
-      Failure[transfer:]
+      if transfer.destroy!
+        Success[transfer:]
+      else
+        Failure[transfer:]
+      end
     end
   end
 end
