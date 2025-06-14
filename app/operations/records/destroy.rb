@@ -10,9 +10,11 @@ module Records
     def call
       record = Record.find(@id)
 
-      return Success[record:] if record.destroy
-
-      Failure[record:]
+      if record.destroy
+        Success[record:]
+      else
+        Failure[record:]
+      end
     end
   end
 end

@@ -10,9 +10,11 @@ module Accounts
     def call
       account = Account.find(@id)
 
-      return Success[account:] if account.destroy
-
-      Failure[account:]
+      if account.destroy
+        Success[account:]
+      else
+        Failure[account:]
+      end
     end
   end
 end

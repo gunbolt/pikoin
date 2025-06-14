@@ -10,9 +10,11 @@ module Records
     def call
       record = Record.new(@attributes)
 
-      return Success[record:] if record.save
-
-      Failure[record:]
+      if record.save
+        Success[record:]
+      else
+        Failure[record:]
+      end
     end
   end
 end

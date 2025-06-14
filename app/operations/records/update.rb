@@ -11,9 +11,11 @@ module Records
     def call
       record = Record.find(@id)
 
-      return Success[record:] if record.update(@attributes)
-
-      Failure[record:]
+      if record.update(@attributes)
+        Success[record:]
+      else
+        Failure[record:]
+      end
     end
   end
 end

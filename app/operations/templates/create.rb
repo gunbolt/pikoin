@@ -10,9 +10,11 @@ module Templates
     def call
       template = Template.new(default_attributes.merge(@attributes))
 
-      return Success[template:] if template.save
-
-      Failure[template:]
+      if template.save
+        Success[template:]
+      else
+        Failure[template:]
+      end
     end
 
     def default_attributes = {position: Template.next_position}
