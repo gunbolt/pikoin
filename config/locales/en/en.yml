@@ -40,12 +40,18 @@ en:
 
   "Choose a record type": "Choose a record type"
 
+  "Choose the reminder type": "Choose the reminder type"
+
   "Choose the type of record you want to create": >-
     Choose the type of record you want to create.
 
   "Create a new record": "Create a new record"
 
   "Create a new template": "Create a new template"
+
+  "Daily": "Daily"
+
+  "Define the frequency of your reminder": "Define the frequency of your reminder"
 
   "Edit": "Edit"
 
@@ -86,6 +92,8 @@ en:
 
   "Log into your account": "Log into your account"
 
+  "Monthly": "Monthly"
+
   "Move money between accounts": "Move money between accounts"
 
   "New account": "New account"
@@ -107,6 +115,8 @@ en:
   "No expenses for the chosen period": "No expenses for the chosen period"
 
   "Nothing to remind you of — yet": "Nothing to remind you of — yet"
+
+  "One time": "One time"
 
   "Password": "Password"
 
@@ -164,6 +174,10 @@ en:
     Use templates to simplify the process of adding similar records
 
   "View and manage your accounts": "View and manage your accounts"
+
+  "Weekly": "Weekly"
+
+  "Yearly": "Yearly"
 
   "You don't have any accounts yet!": "You don't have any accounts yet!"
 

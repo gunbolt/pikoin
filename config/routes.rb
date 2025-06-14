@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :insights, only: %i[index]
   resources :ordering, only: %i[update], param: :resource
   resources :record_types, only: %i[index]
+  resources :reminder_types, only: %i[index]
   resources :reminders, only: %i[index]
   resources :templates, except: %i[show]
   resources :transfers, except: %i[index show]

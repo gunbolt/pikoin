@@ -16,7 +16,7 @@ module Components
           end
 
           Bolt.ResultActions do
-            Bolt.LinkButton href: "#new-reminder", color: :primary do
+            Bolt.LinkButton href: reminder_types_path, color: :primary do
               t("New reminder")
             end
           end
