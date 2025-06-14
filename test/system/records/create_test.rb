@@ -91,7 +91,9 @@ module Records
         selected: template.account.title
       assert_select field(Record, :category_id),
         selected: template.category.title
-      assert_field field(Record, :amount_cents), with: "85,32"
+      assert_field field(Record, :amount_cents) do |field|
+        field.value.include?(template.amount.format(symbol: nil))
+      end
       assert_field field(Record, :note), with: template.note
       assert_field field(Record, :occurred_on), with: Time.zone.today
 

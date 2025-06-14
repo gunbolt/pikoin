@@ -10,7 +10,9 @@ module Records
       assert_css "h1", text: t("Edit record")
       assert_link t("Cancel"), href: account_records_path(record.account)
 
-      fill_in field(Record, :amount_cents), with: "9582"
+      fill_in field(Record, :amount_cents),
+        with: "9582",
+        fill_options: {clear: :backspace}
       fill_in field(Record, :occurred_on), with: "2020-01-01"
 
       click_button submit_text(Record, :update)

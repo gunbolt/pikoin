@@ -10,7 +10,9 @@ module Transfers
       assert_css "h1", text: t("Edit transfer")
       assert_link t("Cancel"), href: account_records_path(transfer.to_account)
 
-      fill_in field(Transfer, :amount_cents), with: "9582"
+      fill_in field(Transfer, :amount_cents),
+        with: "9582",
+        fill_options: {clear: :backspace}
       fill_in field(Transfer, :occurred_on), with: "2020-01-01"
 
       click_button submit_text(Transfer, :update)
