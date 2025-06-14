@@ -3,30 +3,39 @@ import SimpleMaskMoney from 'simple-mask-money'
 
 // Connects to data-controller="money-field"
 export default class extends Controller {
+  #remove = () => {}
+
   static values = {
     allowNegative: Boolean,
-    decimalSeparator: String,
+    symbol: String,
+    symbolFirst: Boolean,
+    decimalMark: String,
     thousandsSeparator: String,
-    fractionDigits: Number
+    exponent: Number
   }
 
   connect () {
-    this.setupInput()
-    this.setupUnmaskOnSubmit()
+    this.#setupInput()
+    this.#setupUnmaskOnSubmit()
   }
 
-  setupInput () {
-    SimpleMaskMoney.setMask(this.element, {
+  disconnect () {
+    this.#remove()
+  }
+
+  #setupInput () {
+    this.#remove = SimpleMaskMoney.setMask(this.element, {
       allowNegative: this.allowNegativeValue,
-      decimalSeparator: this.decimalSeparatorValue,
+      decimalSeparator: this.decimalMarkValue,
       thousandsSeparator: this.thousandsSeparatorValue,
-      fractionDigits: this.fractionDigitsValue,
+      fractionDigits: this.exponentValue,
       fixed: true,
-      cursor: 'end'
+      cursor: 'end',
+      ...this.#symbolOptions()
     })
   }
 
-  setupUnmaskOnSubmit () {
+  #setupUnmaskOnSubmit () {
     this.element.form.addEventListener('submit', () => {
       const maskedValue = this.element.value
       this.element.value = maskedValue.replace(/[^0-9-]/g, '') // keep numeric characters
@@ -34,5 +43,13 @@ export default class extends Controller {
         this.element.value = maskedValue
       }, 1) // set masked value again after submit
     })
+  }
+
+  #symbolOptions () {
+    if (this.symbolFirstValue) {
+      return { prefix: `${this.symbolValue} ` }
+    } else {
+      return { suffix: ` ${this.symbolValue}` }
+    }
   }
 }
