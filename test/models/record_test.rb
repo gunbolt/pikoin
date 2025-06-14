@@ -68,14 +68,8 @@ class RecordTest < ActiveSupport::TestCase
   end
 
   test "#amount" do
-    expense = Record.new(
-      group: :expense,
-      amount_cents: 1234
-    )
-    income = Record.new(
-      group: :income,
-      amount_cents: 1234
-    )
+    expense = Record.new(group: :expense, amount_cents: 1234)
+    income = Record.new(group: :income, amount_cents: 1234)
 
     assert_equal Money.new(-12_34), expense.amount
     assert_equal Money.new(12_34), income.amount
