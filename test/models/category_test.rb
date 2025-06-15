@@ -5,6 +5,7 @@ class CategoryTest < ActiveSupport::TestCase
     category = Category.new
 
     assert have_many(:records).dependent(:destroy).matches?(category)
+    assert have_many(:reminders).dependent(:destroy).matches?(category)
     assert have_many(:templates).dependent(:destroy).matches?(category)
   end
 

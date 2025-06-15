@@ -2,6 +2,7 @@ class Account < ApplicationRecord
   include Sortable
 
   has_many :records, dependent: :destroy
+  has_many :reminders, dependent: :destroy
   has_many :templates, dependent: :destroy
 
   # This is necessary to allow destroying associated transfers
