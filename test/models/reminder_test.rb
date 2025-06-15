@@ -49,4 +49,11 @@ class ReminderTest < ActiveSupport::TestCase
     assert_equal Money.new(12_34), reminder_b.amount
     assert no_amount.amount.zero?
   end
+
+  test "#next_occurrence_date" do
+    reminder = build_stubbed(:reminder)
+
+    assert_equal reminder.config.next_occurrence_date,
+      reminder.next_occurrence_date
+  end
 end
