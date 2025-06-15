@@ -6,6 +6,11 @@ class ReminderTest < ActiveSupport::TestCase
 
     assert belong_to(:account).matches?(reminder)
     assert belong_to(:category).matches?(reminder)
+
+    assert have_many(:occurrences)
+      .class_name("ReminderOccurrence")
+      .dependent(:destroy)
+      .matches?(reminder)
   end
 
   test "delegated types" do
