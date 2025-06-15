@@ -15,16 +15,22 @@ module Reminders
       }
 
       result = Reminders::Create.call(attributes:)
+      reminder = result.reminder
 
       assert_instance_of Reminders::Create::Success, result
-      assert result.reminder.persisted?
+      assert reminder.persisted?
 
       attributes.except(:config_attributes).each do |attribute, value|
-        assert_equal value, result.reminder.public_send(attribute)
+        assert_equal value, reminder.public_send(attribute)
       end
       attributes[:config_attributes].each do |attribute, value|
-        assert_equal value, result.reminder.config.public_send(attribute)
+        assert_equal value, reminder.config.public_send(attribute)
       end
+
+      assert_equal 1, reminder.occurrences.count
+      assert reminder.occurrences
+        .where(occurs_on: reminder.next_occurrence_date)
+        .any?
     end
 
     test "failure" do
