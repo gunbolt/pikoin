@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_06_14_164313) do
+ActiveRecord::Schema[8.0].define(version: 2025_06_15_194622) do
   create_table "accounts", force: :cascade do |t|
     t.text "title", null: false
     t.text "color", null: false
@@ -52,6 +52,17 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_14_164313) do
     t.integer "day", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "reminder_occurrences", force: :cascade do |t|
+    t.integer "reminder_id", null: false
+    t.integer "record_id"
+    t.date "occurs_on", null: false
+    t.boolean "dismissed", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["record_id"], name: "index_reminder_occurrences_on_record_id"
+    t.index ["reminder_id"], name: "index_reminder_occurrences_on_reminder_id"
   end
 
   create_table "reminders", force: :cascade do |t|
@@ -114,6 +125,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_14_164313) do
   add_foreign_key "records", "accounts"
   add_foreign_key "records", "categories"
   add_foreign_key "records", "transfers"
+  add_foreign_key "reminder_occurrences", "records"
+  add_foreign_key "reminder_occurrences", "reminders"
   add_foreign_key "reminders", "accounts"
   add_foreign_key "reminders", "categories"
   add_foreign_key "templates", "accounts"
