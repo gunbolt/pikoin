@@ -5,6 +5,7 @@ class AccountTest < ActiveSupport::TestCase
     account = Account.new
 
     assert have_many(:records).dependent(:destroy).matches?(account)
+    assert have_many(:reminders).dependent(:destroy).matches?(account)
     assert have_many(:templates).dependent(:destroy).matches?(account)
   end
 

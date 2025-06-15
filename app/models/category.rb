@@ -2,6 +2,7 @@ class Category < ApplicationRecord
   include Sortable
 
   has_many :records, dependent: :destroy
+  has_many :reminders, dependent: :destroy
   has_many :templates, dependent: :destroy
 
   validates :title, presence: true
