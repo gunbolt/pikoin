@@ -4,6 +4,7 @@ en:
       account: &account "Account"
       category: &category "Category"
       record: &record "Record"
+      reminder: &reminder "Reminder"
       template: &template "Template"
       transfer: &transfer "Transfer"
 
@@ -28,6 +29,20 @@ en:
         amount_cents: "Amount"
         occurred_on: "Occurred on"
         note: "Note"
+
+      reminder:
+        title: "Title"
+        account: *account
+        account_id: *account
+        category: *category
+        category_id: *category
+        group: "Group"
+        amount_cents: "Amount"
+        note: "Note"
+        config: "Configuration"
+
+      reminder_monthly_config:
+        day: "Day of the month"
 
       template:
         title: "Title"
