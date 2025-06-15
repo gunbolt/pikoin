@@ -23,4 +23,6 @@ class Reminder < ApplicationRecord
   def amount
     Money.new(amount_cents * self.class.groups[group])
   end
+
+  def next_occurrence_date = config.next_occurrence_date
 end

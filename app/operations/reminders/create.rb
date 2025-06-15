@@ -10,9 +10,12 @@ module Reminders
     def call
       reminder = Reminder.new(@attributes)
 
-      if reminder.save
+      Reminder.transaction do
+        reminder.save!
+        reminder.occurrences.create!(occurs_on: reminder.next_occurrence_date)
+
         Success[reminder:]
-      else
+      rescue
         Failure[reminder:]
       end
     end
