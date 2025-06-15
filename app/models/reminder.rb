@@ -4,6 +4,8 @@ class Reminder < ApplicationRecord
   belongs_to :account
   belongs_to :category
 
+  has_many :occurrences, class_name: "ReminderOccurrence", dependent: :destroy
+
   delegated_type :config, types: %w[ReminderMonthlyConfig], dependent: :destroy
 
   accepts_nested_attributes_for :config, update_only: true
