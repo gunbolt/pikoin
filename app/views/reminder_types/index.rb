@@ -49,7 +49,7 @@ module Views
             span { t("Weekly") }
           end
 
-          grid_item(href: "#") do
+          grid_item(href: new_reminder_path(config: :monthly)) do
             Lucide.CalendarSync(class: "size-5")
             span { t("Monthly") }
           end

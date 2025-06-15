@@ -4,6 +4,7 @@ pt-BR:
       account: &account "Conta"
       category: &category "Categoria"
       record: &record "Transação"
+      reminder: &reminder "Lembrete"
       template: &template "Modelo"
       transfer: &transfer "Transferência"
 
@@ -28,6 +29,20 @@ pt-BR:
         amount_cents: "Valor"
         occurred_on: "Ocorrido em"
         note: "Anotação"
+
+      reminder:
+        title: "Nome"
+        account: *account
+        account_id: *account
+        category: *category
+        category_id: *category
+        group: "Tipo"
+        amount_cents: "Valor"
+        note: "Anotação"
+        config: "Configuração"
+
+      reminder_monthly_config:
+        day: "Dia do mês"
 
       template:
         title: "Nome"
