@@ -47,6 +47,8 @@ pt-BR:
 
   "Create a new record": "Crie uma nova transação"
 
+  "Create a new reminder": "Crie um novo lembrete"
+
   "Create a new template": "Crie um novo modelo"
 
   "Daily": "Diário"
@@ -126,6 +128,8 @@ pt-BR:
   "Record removed": "Transação excluída"
 
   "Record updated": "Transação atualizada"
+
+  "Reminder created": "Lembrete criado"
 
   "Reminders": "Lembretes"
 

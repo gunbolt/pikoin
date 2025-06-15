@@ -47,6 +47,8 @@ en:
 
   "Create a new record": "Create a new record"
 
+  "Create a new reminder": "Create a new reminder"
+
   "Create a new template": "Create a new template"
 
   "Daily": "Daily"
@@ -127,6 +129,8 @@ en:
   "Record removed": "Record removed"
 
   "Record updated": "Record updated"
+
+  "Reminder created": "Reminder created"
 
   "Reminders": "Reminders"
 
