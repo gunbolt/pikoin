@@ -50,6 +50,23 @@ class ReminderTest < ActiveSupport::TestCase
     assert no_amount.amount.zero?
   end
 
+  test "#next_occurrence" do
+    reminder = create(:reminder)
+    assert_nil reminder.next_occurrence
+
+    create(:reminder_occurrence, :dismissed, reminder:, occurs_on: "2025-01-01")
+    assert_nil reminder.reload.next_occurrence
+
+    create(:reminder_occurrence, :settled, reminder:, occurs_on: "2025-02-01")
+    assert_nil reminder.reload.next_occurrence
+
+    next_occurrence = create(:reminder_occurrence, reminder:, occurs_on: "2025-04-01")
+    assert_equal next_occurrence, reminder.reload.next_occurrence
+
+    next_occurrence = create(:reminder_occurrence, reminder:, occurs_on: "2025-03-01")
+    assert_equal next_occurrence, reminder.reload.next_occurrence
+  end
+
   test "#next_occurrence_date" do
     reminder = build_stubbed(:reminder)
 

@@ -120,6 +120,8 @@ en:
 
   "One time": "One time"
 
+  "OVERDUE": "OVERDUE"
+
   "Password": "Password"
 
   "Previous": "Previous"
@@ -165,6 +167,8 @@ en:
     Templates help pre-fill common records info
 
   "This account doesn't have records yet": "This account doesn't have records yet"
+
+  "TODAY": "TODAY"
 
   "Transfer": "Transfer"
 

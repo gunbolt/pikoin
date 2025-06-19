@@ -4,6 +4,9 @@ class Reminder < ApplicationRecord
   belongs_to :account
   belongs_to :category
 
+  # don't use it for joins/includes because ordering isn't applied properly
+  has_one :next_occurrence, -> { pending.order(:occurs_on) }, class_name: "ReminderOccurrence"
+
   has_many :occurrences, class_name: "ReminderOccurrence", dependent: :destroy
 
   delegated_type :config, types: %w[ReminderMonthlyConfig], dependent: :destroy
