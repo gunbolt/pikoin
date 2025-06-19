@@ -5,6 +5,8 @@ class Record < ApplicationRecord
   belongs_to :category, optional: true
   belongs_to :transfer, optional: true
 
+  has_one :reminder_occurrence, dependent: :nullify
+
   scope :on, ->(period) { period ? where(occurred_on: period) : all }
   scope :without_transfers, -> { where(transfer_id: nil) }
 
