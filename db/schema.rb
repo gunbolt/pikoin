@@ -58,7 +58,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_15_194622) do
     t.integer "reminder_id", null: false
     t.integer "record_id"
     t.date "occurs_on", null: false
-    t.boolean "dismissed", default: false, null: false
+    t.text "state", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["record_id"], name: "index_reminder_occurrences_on_record_id"
