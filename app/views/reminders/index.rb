@@ -33,7 +33,7 @@ module Views
 
             Bolt.PageBody do
               if @reminders.any?
-                # Components::Reminders.List(reminders: @reminders)
+                Components::Reminders.List(reminders: @reminders)
               else
                 Components::Reminders.EmptyState
               end
