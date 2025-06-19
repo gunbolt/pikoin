@@ -6,6 +6,8 @@ class RecordTest < ActiveSupport::TestCase
 
     assert belong_to(:account).required(true).matches?(record)
     assert belong_to(:transfer).optional(true).matches?(record)
+
+    assert have_one(:reminder_occurrence).dependent(:nullify).matches?(record)
   end
 
   test "validations" do
