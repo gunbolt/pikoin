@@ -8,6 +8,17 @@ class ReminderOccurrenceTest < ActiveSupport::TestCase
     assert belong_to(:record).optional(true).matches?(occurrence)
   end
 
+  test "enums" do
+    occurrence = ReminderOccurrence.new
+
+    assert define_enum_for(:state)
+      .with_values(pending: "pending", settled: "settled", dismissed: "dismissed")
+      .backed_by_column_of_type(:text)
+      .with_default(:pending)
+      .validating
+      .matches?(occurrence)
+  end
+
   test "validations" do
     occurrence = ReminderOccurrence.new
 
