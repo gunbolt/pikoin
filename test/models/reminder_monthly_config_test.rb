@@ -13,6 +13,12 @@ class ReminderMonthlyConfigTest < ActiveSupport::TestCase
     assert validate_inclusion_of(:day).in_range(1..28).matches?(config)
   end
 
+  test "#description" do
+    config = ReminderMonthlyConfig.new(day: 22)
+
+    assert t("Monthly on the %{day}", day: 22), config.description
+  end
+
   test "#next_occurrence_date" do
     travel_to Date.new(2025, 6, 15) do
       config = ReminderMonthlyConfig.new(day: 14)

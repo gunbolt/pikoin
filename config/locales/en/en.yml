@@ -96,6 +96,8 @@ en:
 
   "Monthly": "Monthly"
 
+  "Monthly on the %{day}": "Monthly on the %{day}"
+
   "Move money between accounts": "Move money between accounts"
 
   "New account": "New account"
