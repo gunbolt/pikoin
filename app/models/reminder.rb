@@ -13,6 +13,8 @@ class Reminder < ApplicationRecord
 
   accepts_nested_attributes_for :config, update_only: true
 
+  delegate :description, :next_occurrence_date, to: :config
+
   validates :title, presence: true
   validates :note, presence: true, allow_blank: true
 
@@ -26,6 +28,4 @@ class Reminder < ApplicationRecord
   def amount
     Money.new(amount_cents * self.class.groups[group])
   end
-
-  def next_occurrence_date = config.next_occurrence_date
 end

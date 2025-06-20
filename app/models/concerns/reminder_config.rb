@@ -8,4 +8,8 @@ module ReminderConfig
   def next_occurrence_date
     raise NoMethodError, "You must implement #{self.class.name}#next_occurrence_date"
   end
+
+  def description
+    raise NoMethodError, "You must implement #{self.class.name}#description"
+  end
 end
