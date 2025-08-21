@@ -22,7 +22,7 @@ class CategoriesController < ApplicationController
     in Categories::Create::Success
       redirect_to categories_path, notice: t("Category created")
     in Categories::Create::Failure(category)
-      render Views::Categories::New.new(category:), status: :unprocessable_entity
+      render Views::Categories::New.new(category:), status: :unprocessable_content
     end
   end
 
@@ -31,7 +31,7 @@ class CategoriesController < ApplicationController
     in Categories::Update::Success
       redirect_to categories_path, notice: t("Category updated")
     in Categories::Update::Failure(category)
-      render Views::Categories::Edit.new(category:), status: :unprocessable_entity
+      render Views::Categories::Edit.new(category:), status: :unprocessable_content
     end
   end
 

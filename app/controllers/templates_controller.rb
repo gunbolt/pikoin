@@ -23,7 +23,7 @@ class TemplatesController < ApplicationController
       redirect_to templates_path, notice: t("Template created")
     in Templates::Create::Failure(template)
       render Views::Templates::New.new(template:, accounts:, categories:),
-        status: :unprocessable_entity
+        status: :unprocessable_content
     end
   end
 
@@ -33,7 +33,7 @@ class TemplatesController < ApplicationController
       redirect_to templates_path, notice: t("Template updated")
     in Templates::Update::Failure(template)
       render Views::Templates::Edit.new(template:, accounts:, categories:),
-        status: :unprocessable_entity
+        status: :unprocessable_content
     end
   end
 

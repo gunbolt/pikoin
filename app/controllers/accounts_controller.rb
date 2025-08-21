@@ -22,7 +22,7 @@ class AccountsController < ApplicationController
     in Accounts::Create::Success
       redirect_to accounts_path, notice: t("Account created")
     in Accounts::Create::Failure(account)
-      render Views::Accounts::New.new(account:), status: :unprocessable_entity
+      render Views::Accounts::New.new(account:), status: :unprocessable_content
     end
   end
 
@@ -31,7 +31,7 @@ class AccountsController < ApplicationController
     in Accounts::Update::Success(account)
       redirect_to account_records_path(account), notice: t("Account updated")
     in Accounts::Update::Failure(account)
-      render Views::Accounts::Edit.new(account:), status: :unprocessable_entity
+      render Views::Accounts::Edit.new(account:), status: :unprocessable_content
     end
   end
 
