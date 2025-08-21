@@ -40,7 +40,7 @@ module Accounts
       in Records::Create::Failure(record)
         render Views::Accounts::Records::New.new(
           record:, accounts:, categories:
-        ), status: :unprocessable_entity
+        ), status: :unprocessable_content
       end
     end
 
@@ -53,7 +53,7 @@ module Accounts
       in Records::Update::Failure(record)
         render Views::Accounts::Records::Edit.new(
           account:, record:, accounts:, categories:
-        ), status: :unprocessable_entity
+        ), status: :unprocessable_content
       end
     end
 

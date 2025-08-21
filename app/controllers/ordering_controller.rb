@@ -8,7 +8,7 @@ class OrderingController < ApplicationController
     in Sortables::Reorder::Success
       head :ok
     in Sortables::Reorder::Failure
-      head :unprocessable_entity
+      head :unprocessable_content
     end
   end
 

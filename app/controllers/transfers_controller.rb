@@ -23,7 +23,7 @@ class TransfersController < ApplicationController
         notice: t("Transfer created")
     in Transfers::Create::Failure(transfer)
       render Views::Transfers::New.new(transfer:, accounts:),
-        status: :unprocessable_entity
+        status: :unprocessable_content
     end
   end
 
@@ -34,7 +34,7 @@ class TransfersController < ApplicationController
         notice: t("Transfer updated")
     in Transfers::Update::Failure(transfer)
       render Views::Transfers::Edit.new(transfer:, accounts:),
-        status: :unprocessable_entity
+        status: :unprocessable_content
     end
   end
 
