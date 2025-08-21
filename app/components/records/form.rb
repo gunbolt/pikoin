@@ -60,7 +60,8 @@ module Components
 
                   Bolt.FieldWrapper do
                     Bolt.Label form, :occurred_on
-                    Bolt.DateField form, :occurred_on
+                    Bolt.DateField form, :occurred_on,
+                      max: Time.zone.today.iso8601
                     Bolt.FieldError form, :occurred_on
                   end
                 end
