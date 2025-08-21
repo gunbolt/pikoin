@@ -8,28 +8,28 @@ module Components
       private
 
       def view_template
-        form_with model: @category do |form|
+        Bolt.Form model: @category do |form|
           Bolt.Stack do
-            Bolt.ErrorSummary form
+            form.error_summary
 
             Bolt.Panel do
               Bolt.Stack do
-                Bolt.FieldWrapper do
-                  Bolt.Label form, :title
-                  Bolt.TextField form, :title
-                  Bolt.FieldError form, :title
+                form.field_wrapper do
+                  form.label :title
+                  form.text_field :title
+                  form.field_error :title
                 end
 
-                Bolt.FieldWrapper do
-                  Bolt.Label form, :color
-                  Bolt.ColorPicker form, :color
-                  Bolt.FieldError form, :color
+                form.field_wrapper do
+                  form.label :color
+                  form.color_picker :color
+                  form.field_error :color
                 end
               end
             end
 
             Bolt.Stack gap: :sm do
-              Bolt.Submit form
+              form.submit
 
               Bolt.LinkButton href: categories_path, ghost: true do
                 Lucide.ArrowLeft(class: "size-5")

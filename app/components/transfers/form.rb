@@ -10,57 +10,54 @@ module Components
       private
 
       def view_template
-        form_with model: @transfer do |form|
+        Bolt.Form model: @transfer do |form|
           input type: :hidden,
             name: "account_id",
             value: request.params[:account_id]
 
           Bolt.Stack do
-            Bolt.ErrorSummary form
+            form.error_summary
 
             Bolt.Panel do
               Bolt.Stack do
                 div class: "flex flex-row gap-4" do
-                  Bolt.FieldWrapper do
-                    Bolt.Label form, :from_account_id
-                    Bolt.CollectionSelect form, :from_account_id, @accounts,
-                      :id, :title
-                    Bolt.FieldError form, :from_account_id
+                  form.field_wrapper do
+                    form.label :from_account_id
+                    form.collection_select :from_account_id, @accounts, :id, :title
+                    form.field_error :from_account_id
                   end
 
-                  Bolt.FieldWrapper do
-                    Bolt.Label form, :to_account_id
-                    Bolt.CollectionSelect form, :to_account_id, @accounts,
-                      :id, :title
-                    Bolt.FieldError form, :to_account_id
+                  form.field_wrapper do
+                    form.label :to_account_id
+                    form.collection_select :to_account_id, @accounts, :id, :title
+                    form.field_error :to_account_id
                   end
                 end
 
                 div class: "flex flex-row gap-4" do
-                  Bolt.FieldWrapper do
-                    Bolt.Label form, :amount_cents
-                    Bolt.MoneyField form, :amount_cents, autofocus: true
-                    Bolt.FieldError form, :amount_cents
+                  form.field_wrapper do
+                    form.label :amount_cents
+                    form.money_field :amount_cents, autofocus: true
+                    form.field_error :amount_cents
                   end
 
-                  Bolt.FieldWrapper do
-                    Bolt.Label form, :occurred_on
-                    Bolt.DateField form, :occurred_on,
-                      max: Time.zone.today.iso8601
-                    Bolt.FieldError form, :occurred_on
+                  form.field_wrapper do
+                    form.label :occurred_on
+                    form.date_field :occurred_on, max: Time.zone.today.iso8601
+                    form.field_error :occurred_on
                   end
                 end
 
-                Bolt.FieldWrapper do
-                  Bolt.Label form, :note
-                  Bolt.TextField form, :note
-                  Bolt.FieldError form, :note
+                form.field_wrapper do
+                  form.label :note
+                  form.text_field :note
+                  form.field_error :note
                 end
               end
             end
 
             Bolt.Stack gap: :sm do
-              Bolt.Submit form
+              form.submit
 
               Bolt.LinkButton href: @cancel_href, ghost: true do
                 Lucide.ArrowLeft(class: "size-5")

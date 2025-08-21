@@ -4,7 +4,6 @@ module Components
     include PhlexIcons
 
     # Include any helpers you want to be available across all components
-    include Phlex::Rails::Helpers::FormWith
     include Phlex::Rails::Helpers::ImagePath
     include Phlex::Rails::Helpers::L
     include Phlex::Rails::Helpers::Request

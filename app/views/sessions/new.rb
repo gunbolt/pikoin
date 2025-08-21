@@ -14,23 +14,21 @@ module Views
             end
 
             Bolt.PageBody do
-              form_with scope: :session, url: session_path do |form|
+              Bolt.Form scope: :session, url: session_path do |form|
                 Bolt.Stack do
                   Bolt.Panel do
                     Bolt.Stack do
-                      Bolt.FieldWrapper do
-                        Bolt.Label form, :email, t("Email address")
-                        Bolt.EmailField form,
-                          :email,
+                      form.field_wrapper do
+                        form.label :email, t("Email address")
+                        form.email_field :email,
                           autofocus: true,
                           autocomplete: "email",
                           value: email_value
                       end
 
-                      Bolt.FieldWrapper do
-                        Bolt.Label form, :password, t("Password")
-                        Bolt.PasswordField form,
-                          :password,
+                      form.field_wrapper do
+                        form.label :password, t("Password")
+                        form.password_field :password,
                           autocomplete: "current-password",
                           value: password_value
                       end
@@ -38,7 +36,7 @@ module Views
                   end
 
                   Bolt.Stack gap: :sm do
-                    Bolt.Submit form, t("Sign in")
+                    form.submit t("Sign in")
                   end
                 end
               end
