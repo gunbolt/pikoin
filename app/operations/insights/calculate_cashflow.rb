@@ -1,10 +1,8 @@
 module Insights
   class CalculateCashflow < ApplicationOperation
-    Result = Data.define(:cashflow)
+    prop :period, _Range?(_Union(Date, Time)), default: nil
 
-    def initialize(period: nil)
-      @period = period
-    end
+    Result = Result.define(cashflow: Cashflow)
 
     def call
       Result[

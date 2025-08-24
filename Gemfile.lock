@@ -161,6 +161,8 @@ GEM
       zeitwerk (>= 2.6.18, < 3.0)
     language_server-protocol (3.17.0.5)
     lint_roller (1.1.0)
+    literal (1.8.1)
+      zeitwerk
     logger (1.7.0)
     loofah (2.24.1)
       crass (~> 1.0.2)
@@ -393,6 +395,7 @@ DEPENDENCIES
   factory_bot_rails
   jsbundling-rails
   kamal
+  literal
   money
   pagy
   phlex-icons-lucide

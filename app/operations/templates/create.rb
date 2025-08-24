@@ -1,11 +1,9 @@
 module Templates
   class Create < ApplicationOperation
-    Success = Data.define(:template)
-    Failure = Data.define(:template)
+    prop :attributes, Hash
 
-    def initialize(attributes:)
-      @attributes = attributes
-    end
+    Success = Result.define(template: Template)
+    Failure = Result.define(template: Template)
 
     def call
       template = Template.new(default_attributes.merge(@attributes))

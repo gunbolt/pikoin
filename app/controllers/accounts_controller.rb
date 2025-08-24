@@ -45,6 +45,6 @@ class AccountsController < ApplicationController
   private
 
   def account_params
-    params.expect(account: %i[title color initial_amount_cents archived])
+    params.expect(account: %i[title color initial_amount_cents archived]).to_h
   end
 end

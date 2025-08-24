@@ -1,12 +1,10 @@
 module Transfers
   class Update < ApplicationOperation
-    Success = Data.define(:transfer)
-    Failure = Data.define(:transfer)
+    prop :id, Id
+    prop :attributes, Hash
 
-    def initialize(id:, attributes:)
-      @id = id
-      @attributes = attributes
-    end
+    Success = Result.define(transfer: Transfer)
+    Failure = Result.define(transfer: Transfer)
 
     def call
       transfer = Transfer.find(@id)

@@ -1,11 +1,9 @@
 module Templates
   class Destroy < ApplicationOperation
-    Success = Data.define(:template)
-    Failure = Data.define(:template)
+    prop :id, Id
 
-    def initialize(id:)
-      @id = id
-    end
+    Success = Result.define(template: Template)
+    Failure = Result.define(template: Template)
 
     def call
       template = Template.find(@id)

@@ -1,11 +1,9 @@
 module Accounts
   class Create < ApplicationOperation
-    Success = Data.define(:account)
-    Failure = Data.define(:account)
+    prop :attributes, Hash
 
-    def initialize(attributes:)
-      @attributes = attributes
-    end
+    Success = Result.define(account: Account)
+    Failure = Result.define(account: Account)
 
     def call
       account = Account.new(default_attributes.merge(@attributes))

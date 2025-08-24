@@ -1,11 +1,9 @@
 module Records
   class Create < ApplicationOperation
-    Success = Data.define(:record)
-    Failure = Data.define(:record)
+    prop :attributes, Hash
 
-    def initialize(attributes:)
-      @attributes = attributes
-    end
+    Success = Result.define(record: Record)
+    Failure = Result.define(record: Record)
 
     def call
       record = Record.new(@attributes)

@@ -1,11 +1,9 @@
 module Categories
   class Destroy < ApplicationOperation
-    Success = Data.define(:category)
-    Failure = Data.define(:category)
+    prop :id, Id
 
-    def initialize(id:)
-      @id = id
-    end
+    Success = Result.define(category: Category)
+    Failure = Result.define(category: Category)
 
     def call
       category = Category.find(@id)

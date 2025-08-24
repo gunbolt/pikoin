@@ -1,10 +1,8 @@
 module Insights
   class BuildData < ApplicationOperation
-    Result = Data.define(:insights)
+    prop :period, _Range?(_Union(Date, Time)), default: nil
 
-    def initialize(period: nil)
-      @period = period
-    end
+    Result = Result.define(insights: InsightsData)
 
     def call
       Result[insights: InsightsData[cashflow:, spending_breakdown:]]

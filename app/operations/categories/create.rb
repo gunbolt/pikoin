@@ -1,11 +1,9 @@
 module Categories
   class Create < ApplicationOperation
-    Success = Data.define(:category)
-    Failure = Data.define(:category)
+    prop :attributes, Hash
 
-    def initialize(attributes:)
-      @attributes = attributes
-    end
+    Success = Result.define(category: Category)
+    Failure = Result.define(category: Category)
 
     def call
       category = Category.new(default_attributes.merge(@attributes))

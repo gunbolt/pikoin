@@ -1,12 +1,10 @@
 module Templates
   class Update < ApplicationOperation
-    Success = Data.define(:template)
-    Failure = Data.define(:template)
+    prop :id, Id
+    prop :attributes, Hash
 
-    def initialize(id:, attributes:)
-      @id = id
-      @attributes = attributes
-    end
+    Success = Result.define(template: Template)
+    Failure = Result.define(template: Template)
 
     def call
       template = Template.find(@id)
