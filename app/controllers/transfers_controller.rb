@@ -51,7 +51,7 @@ class TransfersController < ApplicationController
   def transfer_params
     params.expect(
       transfer: %i[from_account_id to_account_id amount_cents occurred_on note]
-    )
+    ).to_h
   end
 
   def accounts = Account.active.order(:position)

@@ -49,7 +49,7 @@ class TemplatesController < ApplicationController
   def template_params
     params.expect(
       template: %i[title group account_id category_id amount_cents note]
-    )
+    ).to_h
   end
 
   def accounts = Account.active.order(:position)

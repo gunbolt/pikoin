@@ -1,12 +1,10 @@
 module Records
   class Update < ApplicationOperation
-    Success = Data.define(:record)
-    Failure = Data.define(:record)
+    prop :id, Id
+    prop :attributes, Hash
 
-    def initialize(id:, attributes:)
-      @id = id
-      @attributes = attributes
-    end
+    Success = Result.define(record: Record)
+    Failure = Result.define(record: Record)
 
     def call
       record = Record.find(@id)

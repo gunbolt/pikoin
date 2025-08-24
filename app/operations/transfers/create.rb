@@ -1,11 +1,9 @@
 module Transfers
   class Create < ApplicationOperation
-    Success = Data.define(:transfer)
-    Failure = Data.define(:transfer)
+    prop :attributes, Hash
 
-    def initialize(attributes:)
-      @attributes = attributes
-    end
+    Success = Result.define(transfer: Transfer)
+    Failure = Result.define(transfer: Transfer)
 
     def call
       transfer = Transfer.new(@attributes)

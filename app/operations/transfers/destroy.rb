@@ -1,11 +1,9 @@
 module Transfers
   class Destroy < ApplicationOperation
-    Success = Data.define(:transfer)
-    Failure = Data.define(:transfer)
+    prop :id, Id
 
-    def initialize(id:)
-      @id = id
-    end
+    Success = Result.define(transfer: Transfer)
+    Failure = Result.define(transfer: Transfer)
 
     def call
       transfer = Transfer.find(@id)

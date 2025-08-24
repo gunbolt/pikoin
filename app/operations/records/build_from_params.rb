@@ -1,11 +1,9 @@
 module Records
   class BuildFromParams < ApplicationOperation
-    Result = Data.define(:record)
+    prop :account, Account
+    prop :params, Hash
 
-    def initialize(account:, params:)
-      @account = account
-      @params = params
-    end
+    Result = Result.define(record: Record)
 
     def call
       record = case @params

@@ -1,10 +1,8 @@
 module Insights
   class CalculateSpendingBreakdown < ApplicationOperation
-    Result = Data.define(:spending_breakdown)
+    prop :period, _Range?(_Union(Date, Time)), default: nil
 
-    def initialize(period: nil)
-      @period = period
-    end
+    Result = Result.define(spending_breakdown: SpendingBreakdown)
 
     def call
       items = Category

@@ -1,11 +1,9 @@
 module Accounts
   class Destroy < ApplicationOperation
-    Success = Data.define(:account)
-    Failure = Data.define(:account)
+    prop :id, Id
 
-    def initialize(id:)
-      @id = id
-    end
+    Success = Result.define(account: Account)
+    Failure = Result.define(account: Account)
 
     def call
       account = Account.find(@id)

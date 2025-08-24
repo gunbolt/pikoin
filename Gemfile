@@ -10,6 +10,8 @@ gem "cssbundling-rails"
 gem "jsbundling-rails"
 # Deploy this application anywhere as a Docker container [https://kamal-deploy.org]
 gem "kamal", require: false
+# Add types to class initializers [https://github.com/yippee-fun/literal]
+gem "literal"
 # Dealing with money and currency conversion [https://github.com/RubyMoney/money]
 gem "money"
 # Pagination Ruby Gem [https://github.com/ddnexus/pagy]

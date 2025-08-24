@@ -1,12 +1,10 @@
 module Categories
   class Update < ApplicationOperation
-    Success = Data.define(:category)
-    Failure = Data.define(:category)
+    prop :id, Id
+    prop :attributes, Hash
 
-    def initialize(id:, attributes:)
-      @id = id
-      @attributes = attributes
-    end
+    Success = Result.define(category: Category)
+    Failure = Result.define(category: Category)
 
     def call
       category = Category.find(@id)

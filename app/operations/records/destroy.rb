@@ -1,11 +1,9 @@
 module Records
   class Destroy < ApplicationOperation
-    Success = Data.define(:record)
-    Failure = Data.define(:record)
+    prop :id, Id
 
-    def initialize(id:)
-      @id = id
-    end
+    Success = Result.define(record: Record)
+    Failure = Result.define(record: Record)
 
     def call
       record = Record.find(@id)

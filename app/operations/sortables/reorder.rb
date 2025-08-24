@@ -1,7 +1,10 @@
 module Sortables
   class Reorder < ApplicationOperation
-    Success = Data.define
-    Failure = Data.define
+    prop :model_class, _Descendant(Sortable)
+    prop :ordering, Hash
+
+    Success = Result.define
+    Failure = Result.define
 
     def initialize(model_class:, ordering:)
       @model_class = model_class
