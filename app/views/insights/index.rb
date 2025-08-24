@@ -48,9 +48,9 @@ module Views
             name: "period",
             data: {action: "auto-submit#submit"}
           ) do
-            Period::ALL.each_key do |period|
-              option(value: period, selected: request.params[:period] == period) do
-                t(period, scope: "period")
+            Period.each do |period|
+              option(value: period.value, selected: request.params[:period] == period.value) do
+                period.label_i18n
               end
             end
           end

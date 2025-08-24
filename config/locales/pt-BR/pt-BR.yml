@@ -3,6 +3,19 @@ pt-BR:
     formats:
       full_date: "%a, %d de %B de %Y"
 
+  periods:
+    "This month": "Esse mês"
+    "This year": "Esse ano"
+    "Last month": "Último mês"
+    "Last year": "Último ano"
+    "Last 7 days": "Últimos 7 dias"
+    "Last 30 days": "Últimos 30 dias"
+    "Last 3 months": "Últimos 3 meses"
+    "Last 6 months": "Últimos 6 meses"
+    "Last 12 months": "Últimos 12 meses"
+    "Last 24 months": "Últimos 24 meses"
+    "All": "Tudo"
+
   "Account created": "Conta criada"
 
   "Account removed": "Conta excluída"
@@ -159,16 +172,3 @@ pt-BR:
   "You haven’t saved any templates": "Você ainda não criou nenhum modelo"
 
   "Your finances overview": "Uma visão geral das suas finanças"
-
-  period:
-    tm: "Esse mês"
-    ty: "Esse ano"
-    lm: "Último mês"
-    ly: "Último ano"
-    7d: "Últimos 7 dias"
-    1m: "Últimos 30 dias"
-    3m: "Últimos 3 meses"
-    6m: "Últimos 6 meses"
-    1y: "Últimos 12 meses"
-    2y: "Últimos 24 meses"
-    all: "Tudo"
