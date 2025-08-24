@@ -3,6 +3,19 @@ en:
     formats:
       full_date: "%a, %B %d, %Y"
 
+  periods:
+    "This month": "This month"
+    "This year": "This year"
+    "Last month": "Last month"
+    "Last year": "Last year"
+    "Last 7 days": "Last 7 days"
+    "Last 30 days": "Last 30 days"
+    "Last 3 months": "Last 3 months"
+    "Last 6 months": "Last 6 months"
+    "Last 12 months": "Last 12 months"
+    "Last 24 months": "Last 24 months"
+    "All": "All"
+
   "Account created": "Account created"
 
   "Account removed": "Account removed"
@@ -159,16 +172,3 @@ en:
   "You haven’t saved any templates": "You haven’t saved any templates"
 
   "Your finances overview": "Your finances overview"
-
-  period:
-    tm: "This month"
-    ty: "This year"
-    lm: "Last month"
-    ly: "Last year"
-    7d: "Last 7 days"
-    1m: "Last 30 days"
-    3m: "Last 3 months"
-    6m: "Last 6 months"
-    1y: "Last 12 months"
-    2y: "Last 24 months"
-    all: "All"

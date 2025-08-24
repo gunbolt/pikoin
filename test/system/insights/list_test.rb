@@ -17,13 +17,13 @@ module Insights
       assert_text Money.new(10_00).format(sign_positive: true)
       assert_text Money.new(-3_00).format
 
-      select t("period.7d"), from: "period"
+      select t("periods.Last 7 days"), from: "period"
 
       assert_text Money.new(9_00).format(sign_positive: true)
       assert_text Money.new(10_00).format(sign_positive: true)
       assert_text Money.new(-1_00).format
 
-      select t("period.all"), from: "period"
+      select t("periods.All"), from: "period"
 
       assert_text Money.new(3_00).format(sign_positive: true)
       assert_text Money.new(10_00).format(sign_positive: true)
