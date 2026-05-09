@@ -19,6 +19,7 @@ gem "pagy"
 # General icons extension for Phlex [https://github.com/AliOsm/phlex-icons]
 gem "phlex-icons-lucide"
 # An object-oriented alternative to ActionView for Ruby on Rails [https://github.com/phlex-ruby/phlex-rails]
+gem "phlex", github: "stephannv/phlex", branch: "fix/rendering_context"
 gem "phlex-rails"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
@@ -46,6 +47,8 @@ gem "tzinfo-data", platforms: %i[windows jruby]
 group :development, :test do
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
+  # Patch-level verification for Bundler [https://github.com/rubysec/bundler-audit]
+  gem "bundler-audit", require: false
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri windows], require: "debug/prelude"
   # A library for setting up Ruby objects as test data [https://github.com/thoughtbot/factory_bot_rails]
@@ -63,6 +66,8 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
+  # A beautifully tiny mock (and stub) object framework [https://github.com/minitest/minitest-mock]
+  gem "minitest-mock"
   # Selenium helps to automate popular browsers. https://github.com/SeleniumHQ/selenium/tree/trunk/rb
   gem "selenium-webdriver"
   # Simple one-liner tests for common Rails functionality [https://github.com/thoughtbot/shoulda]
