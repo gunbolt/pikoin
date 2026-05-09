@@ -1,3 +1,31 @@
 [tools]
 node = "24.5.0"
 ruby = "4.0.3"
+
+[tasks.setup]
+description = "Setup project"
+run = ["bin/setup"]
+
+[tasks.dev]
+description = "Start development server"
+run = ["bin/dev"]
+
+[tasks.test]
+description = "Run tests"
+run = ["bundle exec rails test", "bundle exec rails test:system"]
+
+[tasks.lint]
+description = "Run linter"
+run = ["bundle exec standardrb --fix", "yarn lint --fix"]
+
+[tasks.audit]
+description = "Run audit tools"
+run = ["bin/brakeman --no-pager", "bin/bundler-audit", "yarn audit"]
+
+[tasks.upgrade]
+description = "Upgrade ruby and javascript dependencies"
+run = ["bundle update --all", "yarn upgrade-interactive --latest", "yarn upgrade"]
+
+[tasks.ci]
+description = "Run test/lint/audit tasks"
+run=["mise run test", "mise run lint", "mise run audit"]
