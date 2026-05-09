@@ -8,6 +8,8 @@ module Bolt
 
     def text_field(...) = Bolt.TextField(@form, ...)
 
+    def hidden_field(...) = @form.hidden_field(...)
+
     def money_field(...) = Bolt.MoneyField(@form, ...)
 
     def email_field(...) = Bolt.EmailField(@form, ...)
@@ -15,6 +17,8 @@ module Bolt
     def password_field(...) = Bolt.PasswordField(@form, ...)
 
     def date_field(...) = Bolt.DateField(@form, ...)
+
+    def select(...) = Bolt.Select(@form, ...)
 
     def collection_select(...) = Bolt.CollectionSelect(@form, ...)
 
@@ -31,6 +35,12 @@ module Bolt
     def field_error(...) = Bolt.FieldError(@form, ...)
 
     def submit(...) = Bolt.Submit(@form, ...)
+
+    def fields_for(*, **, &)
+      @form.fields_for(*, **) do |form|
+        Bolt.FormBuilder form:, &
+      end
+    end
 
     private
 

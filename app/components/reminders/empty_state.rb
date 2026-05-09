@@ -8,7 +8,7 @@ module Components
           Bolt.ResultImage src: image_path("reminders-empty-state.svg")
 
           Bolt.ResultTitle do
-            t("Nothing to remind you of — yet")
+            t("Nothing to remind you of - yet")
           end
 
           Bolt.ResultDescription do

@@ -17,7 +17,7 @@ class RemindersController < ApplicationController
       redirect_to reminders_path, notice: t("Reminder created")
     in Reminders::Create::Failure(reminder)
       render Views::Reminders::New.new(reminder:, accounts:, categories:),
-        status: :unprocessable_entity
+        status: :unprocessable_content
     end
   end
 

@@ -1,11 +1,9 @@
 module Reminders
   class Create < ApplicationOperation
+    prop :attributes, Hash
+
     Success = Data.define(:reminder)
     Failure = Data.define(:reminder)
-
-    def initialize(attributes:)
-      @attributes = attributes
-    end
 
     def call
       reminder = Reminder.new(@attributes)
