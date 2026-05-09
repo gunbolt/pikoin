@@ -1,6 +1,6 @@
 module Accounts
   class RecordsController < ApplicationController
-    include Pagy::Backend
+    include Pagy::Method
 
     def index
       records = account.records

@@ -10,8 +10,8 @@ module Bolt
 
     def view_template
       div class: "flex flex-row gap-2 justify-between" do
-        if @pagy.prev.present?
-          link_to({page: @pagy.prev}, class: "btn btn-ghost") do
+        if @pagy.previous.present?
+          link_to({page: @pagy.previous}, class: "btn btn-ghost") do
             Lucide.ArrowLeft(class: "size-4")
             plain t("Previous")
           end
