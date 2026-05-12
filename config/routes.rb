@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :record_types, only: %i[index]
   resources :reminder_types, only: %i[index]
   resources :reminders, only: %i[index show new create]
+  resources :reminder_occurrences, only: %i[destroy]
   resources :templates, except: %i[show]
   resources :transfers, except: %i[index show]
 

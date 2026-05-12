@@ -33,6 +33,8 @@ pt-BR:
 
   "After creating an account, you will be able to start recording transactions": "Após criar uma conta, você conseguirá registrar suas transações."
 
+  "Are you sure?": "Tem certeza?"
+
   "Are you sure you want to remove this account? This will also permanently remove all associated records": "Tem certeza que deseja excluir essa conta? Isso irá excluir todas as transações associadas de forma permanente."
 
   "Are you sure you want to remove this category? This will also permanently remove all associated records": "Tem certeza que deseja excluir essa categoria? Isso irá excluir todas as transações associadas de forma permanente."
@@ -160,6 +162,8 @@ pt-BR:
 
   "Reminder created": "Lembrete criado"
 
+  "Reminder dismissed": "Lembrete ignorado"
+
   "Reminders": "Lembretes"
 
   "Reminders for all your planned transactions": "Lembretes para as suas transações planejadas"
@@ -193,6 +197,8 @@ pt-BR:
 
   "Templates help pre-fill common records info": >-
     Modelos ajudam a criar transações com dados pré-definidos
+
+  "There was a problem dismissing the reminder": "Houve um problema ao ignorar o lembrete"
 
   "This account doesn't have records yet": "Essa conta ainda não tem transações"
 

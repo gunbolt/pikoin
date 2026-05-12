@@ -14,7 +14,7 @@ module ReminderOccurrences
 
       ReminderOccurrence.transaction do
         occurrence.dismissed!
-        reminder.occurrences.create!(occurs_on: reminder.next_occurrence_date)
+        reminder.occurrences.create!(occurs_on: reminder.next_occurrence_date(base_date: occurrence.occurs_on))
 
         Success[occurrence:]
       rescue

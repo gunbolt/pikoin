@@ -20,15 +20,15 @@ class ReminderMonthlyConfigTest < ActiveSupport::TestCase
   end
 
   test "#next_occurrence_date" do
-    travel_to Date.new(2025, 6, 15) do
-      config = ReminderMonthlyConfig.new(day: 14)
-      assert_equal Date.new(2025, 7, 14), config.next_occurrence_date
+    config = ReminderMonthlyConfig.new(day: 14)
+    assert_equal Date.new(2025, 7, 14), config.next_occurrence_date(base_date: Date.new(2025, 6, 15))
 
-      config.day = 15
-      assert_equal Date.new(2025, 7, 15), config.next_occurrence_date
+    assert_equal Date.new(2026, 2, 14), config.next_occurrence_date(base_date: Date.new(2026, 2, 1))
 
-      config.day = 16
-      assert_equal Date.new(2025, 6, 16), config.next_occurrence_date
-    end
+    config.day = 15
+    assert_equal Date.new(2025, 7, 15), config.next_occurrence_date(base_date: Date.new(2025, 6, 15))
+
+    config.day = 16
+    assert_equal Date.new(2025, 6, 16), config.next_occurrence_date(base_date: Date.new(2025, 6, 15))
   end
 end

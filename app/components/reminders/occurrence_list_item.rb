@@ -36,10 +36,14 @@ module Components
 
             div class: "flex flex-row items-center justify-end gap-2" do
               Bolt.LinkButton(
-                href: "#edit-reminder",
+                href: reminder_occurrence_path(@occurrence),
                 color: :error,
                 size: :sm,
-                dash: true
+                dash: true,
+                data: {
+                  turbo_method: :delete,
+                  turbo_confirm: t("Are you sure?")
+                }
               ) do
                 Lucide.X(class: "size-5")
                 span { t("Dismiss") }
