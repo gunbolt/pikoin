@@ -16,6 +16,13 @@ pt-BR:
     "Last 24 months": "Últimos 24 meses"
     "All": "Tudo"
 
+  enums:
+    reminder_occurrence:
+      state:
+        pending: "Pendente"
+        settled: "Registrado"
+        dismissed: "Ignorado"
+
   "Account created": "Conta criada"
 
   "Account removed": "Conta excluída"
@@ -67,6 +74,9 @@ pt-BR:
   "Daily": "Diário"
 
   "Define the frequency of your reminder": "Defina a frequência do seu lembrete"
+
+  "Dismiss": "Ignorar"
+
   "Edit": "Atualizar"
 
   "Edit account": "Atualizar conta"
@@ -142,6 +152,8 @@ pt-BR:
 
   "Record created": "Transação criada"
 
+  "Record date: %{date}": "Data da transação: %{date}"
+
   "Record removed": "Transação excluída"
 
   "Record updated": "Transação atualizada"
@@ -160,6 +172,8 @@ pt-BR:
 
   "Set up reminders for any planned expense or income": >-
     Configure lembretes para qualquer despesa ou receita planejada
+
+  "Settle": "Registrar"
 
   "Sign in": "Entrar"
 

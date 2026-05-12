@@ -3,8 +3,10 @@ module Bolt
     PADDING = {
       md: "p-4"
     }
-    def initialize(padding: :md, **)
+
+    def initialize(padding: :md, hoverable: true, **)
       @padding = padding
+      @hoverable = hoverable
 
       super(**)
     end
@@ -14,8 +16,10 @@ module Bolt
     def view_template(&)
       li(
         class: [
-          "bg-base-100 rounded-box shadow hover:bg-base-300",
-          PADDING[@padding]
+          "bg-base-100 rounded-box shadow",
+          ("hover:bg-base-300" if @hoverable),
+          PADDING[@padding],
+          @extra_classes
         ],
         **@attributes,
         &

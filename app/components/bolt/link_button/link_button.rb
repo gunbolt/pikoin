@@ -2,11 +2,17 @@ module Bolt
   class LinkButton < Base
     COLORS = {
       primary: "btn-primary",
+      success: "btn-success",
       error: "btn-error"
-    }
+    }.freeze
 
-    def initialize(color: nil, ghost: false, dash: false, **)
+    SIZES = {
+      sm: "btn-sm"
+    }.freeze
+
+    def initialize(color: nil, size: nil, ghost: false, dash: false, **)
       @color = color
+      @size = size
       @ghost = ghost
       @dash = dash
 
@@ -23,6 +29,7 @@ module Bolt
       [
         "btn",
         COLORS[@color],
+        SIZES[@size],
         ("btn-ghost" if @ghost),
         ("btn-dash" if @dash),
         @extra_classes

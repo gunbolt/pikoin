@@ -8,4 +8,8 @@ class ReminderOccurrence < ApplicationRecord
   belongs_to :record, optional: true
 
   validates :occurs_on, presence: true
+
+  def state_humanize
+    I18n.t(state, scope: "enums.reminder_occurrence.state")
+  end
 end

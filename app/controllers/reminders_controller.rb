@@ -5,6 +5,13 @@ class RemindersController < ApplicationController
     render Views::Reminders::Index.new(reminders:)
   end
 
+  def show
+    reminder = Reminder.find(params[:id])
+    occurrences = reminder.occurrences.order(occurs_on: :desc)
+
+    render Views::Reminders::Show.new(reminder:, occurrences:)
+  end
+
   def new
     reminder = Reminder.new(config: build_config)
 
@@ -34,7 +41,7 @@ class RemindersController < ApplicationController
     params.expect(reminder: [
       :title, :group, :account_id, :category_id, :amount_cents, :note,
       :config_type, config_attributes: %i[day]
-    ])
+    ]).to_h
   end
 
   def accounts = Account.active.order(:position)

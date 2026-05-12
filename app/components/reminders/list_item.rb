@@ -13,7 +13,7 @@ module Components
         Bolt.ListItem padding: nil do
           div class: "flex flex-row gap-2 items-center px-4" do
             a(
-              href: "#",
+              href: reminder_path(@reminder),
               class: "flex flex-row gap-2 items-center justify-between w-full py-4"
             ) do
               div class: "flex flex-col gap-2" do
