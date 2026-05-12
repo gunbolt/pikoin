@@ -16,6 +16,13 @@ en:
     "Last 24 months": "Last 24 months"
     "All": "All"
 
+  enums:
+    reminder_occurrence:
+      state:
+        pending: "Pending"
+        settled: "Settled"
+        dismissed: "Dismissed"
+
   "Account created": "Account created"
 
   "Account removed": "Account removed"
@@ -67,6 +74,8 @@ en:
   "Daily": "Daily"
 
   "Define the frequency of your reminder": "Define the frequency of your reminder"
+
+  "Dismiss": "Dismiss"
 
   "Edit": "Edit"
 
@@ -143,6 +152,8 @@ en:
 
   "Record created": "Record created"
 
+  "Record date: %{date}": "Record date: %{date}"
+
   "Record removed": "Record removed"
 
   "Record updated": "Record updated"
@@ -161,6 +172,8 @@ en:
 
   "Set up reminders for any planned expense or income": >-
     "Set up reminders for any planned expense or income"
+
+  "Settle": "Settle"
 
   "Sign in": "Sign in"
 
