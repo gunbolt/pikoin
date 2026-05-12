@@ -33,6 +33,8 @@ en:
 
   "After creating an account, you will be able to start recording transactions": "After creating an account, you will be able to start recording transactions."
 
+  "Are you sure?": "Are you sure?"
+
   "Are you sure you want to remove this account? This will also permanently remove all associated records": "Are you sure you want to remove this account? This will also permanently remove all associated records."
 
   "Are you sure you want to remove this category? This will also permanently remove all associated records": "Are you sure you want to remove this category? This will also permanently remove all associated records."
@@ -160,6 +162,8 @@ en:
 
   "Reminder created": "Reminder created"
 
+  "Reminder dismissed": "Reminder dismissed"
+
   "Reminders": "Reminders"
 
   "Reminders for all your planned transactions": "Reminders for all your planned transactions"
@@ -193,6 +197,8 @@ en:
 
   "Templates help pre-fill common records info": >-
     Templates help pre-fill common records info
+
+  "There was a problem dismissing the reminder": "There was a problem dismissing the reminder"
 
   "This account doesn't have records yet": "This account doesn't have records yet"
 

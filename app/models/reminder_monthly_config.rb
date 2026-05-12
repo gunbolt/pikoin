@@ -5,14 +5,13 @@ class ReminderMonthlyConfig < ApplicationRecord
 
   def description = I18n.t("Monthly on the %{day}", day:)
 
-  def next_occurrence_date
-    today = Time.zone.today
-    this_month = today.change(day:)
+  def next_occurrence_date(base_date: Time.zone.today)
+    same_month = base_date.change(day:)
 
-    if this_month.after?(today)
-      this_month
+    if same_month.after?(base_date)
+      same_month
     else
-      this_month + 1.month
+      same_month + 1.month
     end
   end
 end

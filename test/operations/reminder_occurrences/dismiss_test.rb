@@ -13,7 +13,7 @@ module ReminderOccurrences
 
       assert_equal 2, reminder.occurrences.count
       assert reminder.occurrences
-        .where(occurs_on: reminder.next_occurrence_date)
+        .where(occurs_on: reminder.next_occurrence_date(base_date: occurrence.occurs_on))
         .any?
     end
 
