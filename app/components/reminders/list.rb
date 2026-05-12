@@ -1,8 +1,6 @@
 module Components
   module Reminders
     class List < Base
-      register_value_helper :distance_of_time_in_words
-
       def initialize(reminders:)
         @reminders = reminders
       end
@@ -35,19 +33,7 @@ module Components
             l(date)
           end
 
-          if date.past?
-            span class: "badge badge-xs badge-error" do
-              t("OVERDUE")
-            end
-          elsif date.today?
-            span class: "badge badge-xs badge-warning" do
-              t("TODAY")
-            end
-          else
-            span class: "badge badge-xs badge-info" do
-              distance_of_time_in_words(Time.zone.today, date)
-            end
-          end
+          Components::ReminderOccurrences.Badge(date:)
         end
       end
     end
